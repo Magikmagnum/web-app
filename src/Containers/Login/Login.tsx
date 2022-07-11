@@ -8,7 +8,7 @@ interface ILoginProps {
 const Login: React.FunctionComponent<ILoginProps> = ( props ) => {
   return (
     <>
-    <p>login</p>
+    <p>login page</p>
     </>
   );
 };
