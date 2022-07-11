@@ -7,7 +7,7 @@ interface IRegisterProps {
 const Register: React.FunctionComponent<IRegisterProps> = (props) => {
   return (
     <>
-        <p>register page</p>
+        <p>Register Page</p>
     </>
   );
 };
