@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Register.scss';
 import FullName from '../../components/FullName/FullName';
 import EmailInput from '../../components/EmailInput/EmailInput';
+import PasswordInput from '../../components/PasswordInput/PasswordInput';
 
 interface IRegisterProps {
 }
@@ -10,6 +11,7 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
 
   const [fullname, setFullname ] = useState("");
   const [emailInput, setEmailInput ] = useState("");
+  const [passwordInput, setPasswordInput ] = useState("");
 
   return (
     <>
@@ -23,6 +25,11 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
           <br/>
           <EmailInput
             setEmailInputFunc = { setEmailInput }
+          />
+          <br/>
+          <br/>
+          <PasswordInput
+            setPasswordInputFunc = { setPasswordInput }
           />
 
         </form>
