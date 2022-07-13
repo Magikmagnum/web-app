@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Register.scss';
 import FullName from '../../components/FullName/FullName';
 import EmailInput from '../../components/EmailInput/EmailInput';
+import PhoneNumberInput from '../../components/PhoneNumberInput/PhoneNumberInput';
 import PasswordInput from '../../components/PasswordInput/PasswordInput';
 
 interface IRegisterProps {
@@ -23,6 +24,11 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
   const setEmailInputState = ( emailToSet:string ) => {
     setEmailInput(emailToSet)
   }
+
+  const [phoneNumberInput, setPhoneNumberInput ] = useState("");
+  const setPhoneNumberInputState = ( phoneNumberToSet:string ) => {
+    setPhoneNumberInput(phoneNumberToSet)
+  }
   
   const [passwordInput, setPasswordInput ] = useState("");
 
@@ -38,7 +44,9 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
           emailInputFunc = { setEmailInputState }
         />
         <br/>
-
+        <PhoneNumberInput 
+          phoneNumberInputFunc={ setPhoneNumberInputState }
+        />
         <br/>
         <PasswordInput
           setPasswordInputFunc = { setPasswordInput }
