@@ -60,7 +60,7 @@ const FullName: React.FunctionComponent<IFullNameProps> = (props) => {
         <>
             <label 
             htmlFor="lastname"
-            >Nom
+            >MON NOM *
             </label>
             <input 
             type="text" 
@@ -79,7 +79,7 @@ const FullName: React.FunctionComponent<IFullNameProps> = (props) => {
 
             <label 
             htmlFor="firstname"
-            >Prénom
+            >MON PRENOM *
             </label>
             <input 
             type="text" 
