@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./PasswordInput.scss"
 
 interface IPasswordInputProps {
     passwordInputFunc:(value: string) => void
@@ -38,16 +39,16 @@ const PasswordInput: React.FunctionComponent<IPasswordInputProps> = (props) => {
         <>        
             <label 
             htmlFor="password"
-            >Mot-de-passe
+            >MON MOT-DE-PASSE *
             </label>
             <input 
-            type="password" 
+            type="password"
             className={ passwordInputComplete ? 'password' : 'password wrong-input' }
             id="password" 
             name="password" 
             onChange={ (e) => checkPasswordInput(e)}
             placeholder="Entrer votre mot-de-passe" required> 
-            </input>  
+            </input> 
             <br/>
             <p className='error-container'>
                 { !passwordInputComplete && passwordInputError }
