@@ -31,6 +31,9 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
   }
   
   const [passwordInput, setPasswordInput ] = useState("");
+  const setPasswordInputState = ( passwordToSet:string ) => {
+    setPasswordInput(passwordToSet)
+  }
 
   return (
     <>
@@ -49,7 +52,7 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
         />
         <br/>
         <PasswordInput
-          setPasswordInputFunc = { setPasswordInput }
+          passwordInputFunc = { setPasswordInputState }
         />
       </form>
     </>
