@@ -4,6 +4,7 @@ import FullName from '../../components/FullName/FullName';
 import EmailInput from '../../components/EmailInput/EmailInput';
 import PhoneNumberInput from '../../components/PhoneNumberInput/PhoneNumberInput';
 import PasswordInput from '../../components/PasswordInput/PasswordInput';
+import ButtonForm from './../../components/ButtonForm/ButtonForm';
 
 interface IRegisterProps {
 }
@@ -35,10 +36,22 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
     setPasswordInput(passwordToSet)
   }
 
+  const checkUserInfo = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const userInfo = {
+        firstname: firstname,
+        lastname: lastname,
+        email: emailInput,
+        phone_number: phoneNumberInput,
+        password: passwordInput
+    }
+    console.log(userInfo)
+  }
   return (
     <>
-      <p>Register Page</p>
-      <form className='form-register'>        
+      <form onSubmit={ checkUserInfo } className='form-register'>        
+      <h2>Je m'inscris</h2>
         <FullName 
           firstNameFunc={ setFirstNameState }
           lastNameFunc={ setLastNameState }
@@ -54,6 +67,9 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
         <PasswordInput
           passwordInputFunc = { setPasswordInputState }
         />
+        <br/>
+        <p>Les champs avec * sont des champs obligatoires.</p>
+        <ButtonForm buttonValue="Je m'inscris"/>
       </form>
     </>
   );
