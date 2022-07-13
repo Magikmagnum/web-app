@@ -31,7 +31,7 @@ const EmailInput: React.FunctionComponent<IEmailInputProps> = (props) => {
         <>        
             <label 
             htmlFor="email"
-            >E-mail
+            >MON ADRESSE E-MAIL *
             </label>
             <input 
             type="email"
