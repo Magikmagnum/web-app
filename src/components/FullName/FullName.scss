@@ -1,8 +1,9 @@
-input {
+.lastName, .firstName {
     width: 70%;
     max-height: 40px;
     min-height: 30px;
-    margin: auto;
+    margin: 0 auto;
+    opacity: 50%;
     margin-bottom: 0px;
     font-size: 1.2em;
     text-align: center;
@@ -12,7 +13,7 @@ input {
     transition-duration: 500ms;
 }
 
-input:focus {
+.lastName:focus, .firstName:focus {
     filter: drop-shadow(0 0 0.20rem lightgreen);
     filter: drop-shadow(0 0 0.20rem lightblue);
     border-color: lightblue;
