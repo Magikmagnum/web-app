@@ -18,8 +18,12 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
   const setFirstNameState = ( fName:string ) => {
     setFirstName(fName)
   }
-
+  
   const [emailInput, setEmailInput ] = useState("");
+  const setEmailInputState = ( emailToSet:string ) => {
+    setEmailInput(emailToSet)
+  }
+  
   const [passwordInput, setPasswordInput ] = useState("");
 
   return (
@@ -31,7 +35,7 @@ const Register: React.FunctionComponent<IRegisterProps> = (props) => {
           lastNameFunc={ setLastNameState }
         /> 
         <EmailInput
-          setEmailInputFunc = { setEmailInput }
+          emailInputFunc = { setEmailInputState }
         />
         <br/>
 
