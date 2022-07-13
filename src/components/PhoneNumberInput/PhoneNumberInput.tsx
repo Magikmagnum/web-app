@@ -27,7 +27,7 @@ const PhoneNumberInput: React.FunctionComponent<IPhoneNumberInputProps> = (props
         <>        
             <label 
             htmlFor="phoneNumber"
-            >Numéro de téléphone (optionnel)
+            >MON NUMERO DE TELEPHONE (optionnel)
             </label>
             <input 
             type="phoneNumber"
