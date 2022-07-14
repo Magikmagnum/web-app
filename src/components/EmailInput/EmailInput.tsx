@@ -10,7 +10,7 @@ const EmailInput: React.FunctionComponent<IEmailInputProps> = (props) => {
     const [emailInputComplete, setEmailInputComplete] = useState(true);
     const [emailInputError, setEmailInputError] = useState('');
 
-    const nameRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const nameRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     const checkEmailInput = (e:React.ChangeEvent<HTMLInputElement>) => {
         if ( !e.target.value ) {
