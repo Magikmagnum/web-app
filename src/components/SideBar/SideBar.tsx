@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import './SideBar.scss';
 import { FaStarOfLife } from 'react-icons/fa';
 
+import logo from '../../images/logoEkna.webp'
+
+
 interface INavBarProps {
   isOpen: boolean;
   toggle(): void;
@@ -49,7 +52,9 @@ const SideBar: React.FunctionComponent<INavBarProps> = (props) => {
         <FaStarOfLife className="closeIcon" onClick={toggle} />
       </div>
       <div className="sideBarWrapper">
+
         <div className="sideBarMenu">
+        <img src={logo} className="navBarLogo" alt='logo' />
           <NavLink className="sideBarLink" onClick={toggle} to="/">Home</NavLink>
           <NavLink className="sideBarLink" onClick={toggle} to="/register">Register</NavLink>
         </div>
