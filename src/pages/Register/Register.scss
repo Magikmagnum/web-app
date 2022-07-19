@@ -1,0 +1,21 @@
+.form-register {
+    width: 55%;
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+
+    background-color: rgb(245, 245, 245);
+    border-radius: 1em;
+    padding: 2% 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    transition-duration: 500ms;
+}
+h2 {
+    text-align: center;
+    color: #5344BA;
+}
+p {
+    opacity: 50%;
+    text-align: center;
+}
