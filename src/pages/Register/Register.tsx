@@ -4,7 +4,7 @@ import FullName from '../../components/FullName/FullName';
 import EmailInput from '../../components/EmailInput/EmailInput';
 import PhoneNumberInput from '../../components/PhoneNumberInput/PhoneNumberInput';
 import PasswordInput from '../../components/PasswordInput/PasswordInput';
-import ButtonForm from './../../components/ButtonForm/ButtonForm';
+import ButtonForm from '../../components/ButtonForm/ButtonForm';
 
 interface IRegisterProps {
 }
