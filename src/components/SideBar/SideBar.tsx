@@ -40,10 +40,6 @@ const SideBar: React.FunctionComponent<INavBarProps> = (props) => {
 
     setSideBarContainerToggel(tab)
 
-    console.log(isOpen);
-    console.log(opacity);
-    console.log(top);
-
   }, [isOpen]);
 
   return (
@@ -54,7 +50,7 @@ const SideBar: React.FunctionComponent<INavBarProps> = (props) => {
       <div className="sideBarWrapper">
 
         <div className="sideBarMenu">
-        <img src={logo} className="navBarLogo" alt='logo' />
+          <img src={logo} className="navBarLogo" alt='logo' />
           <NavLink className="sideBarLink" onClick={toggle} to="/">Home</NavLink>
           <NavLink className="sideBarLink" onClick={toggle} to="/register">Register</NavLink>
         </div>
