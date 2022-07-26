@@ -1,34 +1,56 @@
-import * as React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Navigate, Routes, Route } from 'react-router-dom';
 
 import Login from '../pages/Login/Login';
 import Home from '../pages/Home/Home';
 import Register from '../pages/Register/Register';
+import DashBoard from '../pages/DashBoard/DashBoard';
+import Galleries from '../pages/Galleries/Galleries';
 
 
-interface IRouterProps {
 
-}
+const Router = () => {
 
-const Router: React.FunctionComponent<IRouterProps> = (props) => {
+  const [user, setUser] = useState(false);
+
+
+  useEffect(() => {
+    const u = localStorage.getItem('user');
+    u ? setUser(true) : setUser(false);
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('user', user.toString())
+  }, [user])
+
+  const __handleAuthentification = () => {
+    setUser(true)
+  }
+
+  const __handleDesconnected = () => {
+    setUser(false)
+  }
+
+
   return (
     <Routes>
-      <Route
-        path='/'
-        element={<Home />}
-      />
-      <Route
-        path='/login'
-        element={<Login />}
-      />
-      <Route
-        path='/register'
-        element={<Register />}
-      />
+
+      {!user && (
+        <>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login authenticated={() => __handleAuthentification} />} />
+          <Route path='/register' element={<Register authenticated={() => __handleAuthentification} />} />
+        </>
+      )}
+      {user && (
+        <>
+          <Route path='/dashBoard' element={<DashBoard logout={() => __handleDesconnected } />} />
+          <Route path='/galleries' element={<Galleries logout={() => __handleDesconnected } />} />
+        </>
+      )}
+      <Route path='*' element={<Navigate to={user ? "/dashBoard" : "/login"} />} />
     </Routes>
   );
 };
-
-// www.ekna.fr/
 
 export default Router;

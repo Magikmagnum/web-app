@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './SideBar.scss';
 import { FaStarOfLife } from 'react-icons/fa';
 
-import logo from '../../images/logoEkna.webp'
+import logo from '../../images/icon.png'
 
 
 interface INavBarProps {
@@ -53,6 +53,9 @@ const SideBar: React.FunctionComponent<INavBarProps> = (props) => {
           <img src={logo} className="navBarLogo" alt='logo' />
           <NavLink className="sideBarLink" onClick={toggle} to="/">Home</NavLink>
           <NavLink className="sideBarLink" onClick={toggle} to="/register">Register</NavLink>
+          <NavLink className="sideBarLink" onClick={toggle} to="/dashboard">DashBoard</NavLink>
+          <NavLink className="sideBarLink" onClick={toggle} to="/galleries">Gallerie</NavLink>
+
         </div>
         <div className="sideBtnWrapper">
           <NavLink className="sideBtnLink" onClick={toggle} to="/login">Sign In</NavLink>
