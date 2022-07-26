@@ -8,7 +8,7 @@
     height: 100%;
     width: 100%;
 
-    background-color: #6858D8;
+    background-color: #009006;
 
     top: 100%;
     left: 0;
@@ -64,7 +64,7 @@
     }
 
     &:hover {
-        color: #6858D8;
+        color: #009006;
         transition: 0.2s ease-in-out;
 
     }
@@ -80,7 +80,7 @@
 
 .sideBtnLink {
     border-radius: 50px;
-    background-color: #EF8361;
+    background-color: #000;
     white-space: nowrap;
     padding: 16px;
     color: #fff;
@@ -96,7 +96,7 @@
 
     &:hover {
         background-color: #fff;
-        color: #6858D8;
+        color: #009006;
     }
 
 }

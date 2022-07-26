@@ -1,43 +1,66 @@
-.container {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url("../../images/homeBack.png");
-    background-size: cover;
-    background-position: center;
-    margin-top: -100px;
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
 
-.box {
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    -webkit-align-self: stretch;
-    -ms-flex-item-align: stretch;
-    align-self: stretch;
-    //height: 320px;
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 160px;
+    //background-color: #ddd;
+    padding: 35px 22px;
+
+}
+
+.loginCardHeader {
+    margin: 42px 0;
+
+}
+
+
+.loginTitle {
+    text-align: center;
+    margin: 12px 0;
+}
+
+.loginDescription {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 12px 0;
+
+}
+
+.form {
+    //background-color: rgb(255, 255, 255);
+    margin: 24px auto;
+}
+
+
+
+.formLabel {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.formImput {
+    outline: none;
+    width: 100%;
+    height: 50px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: 1.2px solid #e3e3e3;
+    font-weight: 400;
+    margin-top: 12px;
 }
