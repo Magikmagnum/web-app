@@ -27,7 +27,7 @@ const Router = () => {
     setUser(true)
   }
 
-  const __handleDesconnected = () => {
+  const __handleDesconnection = () => {
     setUser(false)
   }
 
@@ -44,8 +44,8 @@ const Router = () => {
       )}
       {user && (
         <>
-          <Route path='/dashBoard' element={<DashBoard logout={() => __handleDesconnected } />} />
-          <Route path='/galleries' element={<Galleries logout={() => __handleDesconnected } />} />
+          <Route path='/dashBoard' element={<DashBoard desconnected={() => __handleDesconnection } />} />
+          <Route path='/galleries' element={<Galleries desconnected={() => __handleDesconnection } />} />
         </>
       )}
       <Route path='*' element={<Navigate to={user ? "/dashBoard" : "/login"} />} />

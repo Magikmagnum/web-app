@@ -5,9 +5,6 @@ import { useIncrement, useAutoIncrement } from "../../hook/useGalerie";
 import { useNavigate } from 'react-router-dom';
 
 
-interface ILoginProps {
-
-}
 
 const Login = ({ authenticated }: { authenticated: Function }) => {
 

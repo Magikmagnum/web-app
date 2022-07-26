@@ -9,7 +9,7 @@ import data from "../../helpers/competences";
 
 
 
-const DashBoard = ({ logout }: { logout: Function }) => {
+const DashBoard = ({ desconnected }: { desconnected: Function }) => {
 
   // const [loadding, items] = useFetch("https://jsonplaceholder.typicode.com/comments?_limit=5")
   const navigate = useNavigate();

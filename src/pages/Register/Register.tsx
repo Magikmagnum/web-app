@@ -3,9 +3,7 @@ import '../Login/Login'
 import { FormInput, FormButton } from '../../components/Form/Form'
 import { useToggle } from "../../hook/useGalerie";
 
-interface IRegisterProps {
 
-}
 
 const Register = ({ authenticated }: { authenticated: Function }) => {
 
