@@ -1,13 +1,10 @@
 import * as React from 'react';
 import '../Login/Login'
 import { FormInput, FormButton } from '../../components/Form/Form'
-import { useToggle } from "../../hook/useGalerie";
 
 
 
 const Register = ({ authenticated }: { authenticated: Function }) => {
-
-  const [toggleState, setToggleState] = useToggle(true);
 
   return (
 
