@@ -9,11 +9,7 @@ import imgp6 from '../../images/banks/img6.jpeg'
 import imgp7 from '../../images/banks/img7.webp'
 
 
-const Galleries = ({ desconnected }: { desconnected: Function }) => {
-
-
-  console.log('coucou', localStorage.getItem("user"))
-
+const Galleries = () => {
 
   return (
     <>

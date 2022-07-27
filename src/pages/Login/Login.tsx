@@ -1,18 +1,18 @@
-import * as React from 'react';
+import React from 'react';
+
+import { createToggleAuth } from "../../store/auth";
+
 import './Login.scss';
 import { FormInput, FormButton } from '../../components/Form/Form';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
+const Login = () => {
 
-const Login = ({ authenticated }: { authenticated: Function }) => {
-
-  const navigate = useNavigate();
-
+  const dispatch = useDispatch();
 
   const __handleOnClick = () => {
-    authenticated()
-    navigate("/")
+    dispatch(createToggleAuth(true))
   }
 
   return (
@@ -34,7 +34,5 @@ const Login = ({ authenticated }: { authenticated: Function }) => {
     </section>
   );
 };
-
-
 
 export default Login;

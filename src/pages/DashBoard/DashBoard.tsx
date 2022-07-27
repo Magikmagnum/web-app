@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
 //import { useFetch } from "../../hook/useGalerie";
-
 import { Card, CardSquare } from "../../components/Card/Card";
 
 import './DashBoard.scss';
@@ -9,7 +8,7 @@ import data from "../../helpers/competences";
 
 
 
-const DashBoard = ({ desconnected }: { desconnected: Function }) => {
+const DashBoard = () => {
 
   // const [loadding, items] = useFetch("https://jsonplaceholder.typicode.com/comments?_limit=5")
   const navigate = useNavigate();
@@ -18,7 +17,6 @@ const DashBoard = ({ desconnected }: { desconnected: Function }) => {
   const __handleOnClick = () => {
     navigate('/galleries');
   }
-
 
 
   return (
