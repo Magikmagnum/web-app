@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
-import { createToggleAuth } from "../../store/auth";
+import { toggleAuth } from "../../store/auth";
 
 import '../Login/Login'
 import { FormInput, FormButton } from '../../components/Form/Form'
@@ -11,7 +11,7 @@ const Register = () => {
   const dispatch = useDispatch();
 
   const __handleOnClick = () => {
-    dispatch(createToggleAuth(true))
+    dispatch(toggleAuth(true))
   }
 
   return (

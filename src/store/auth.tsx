@@ -11,20 +11,15 @@ export const authSlice = createSlice({
     reducers: {
         // path: 'auth/addAuth'
         toggleAuth: (state, action) => {
+            localStorage.setItem('user', action.payload.toString())
             state.state = action.payload;
         },
     }
 });
 
-export const createToggleAuth = (payload: boolean) => {
 
-    localStorage.setItem('user', payload.toString())
+export const { toggleAuth } = authSlice.actions;
 
-    return {
-        type: "auth/toggleAuth",
-        payload: payload,
-    };
-}
 
 export type InitialState = {
     auth: {

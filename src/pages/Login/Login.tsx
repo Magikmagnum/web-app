@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createToggleAuth } from "../../store/auth";
+import { toggleAuth } from "../../store/auth";
 
 import './Login.scss';
 import { FormInput, FormButton } from '../../components/Form/Form';
@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const __handleOnClick = () => {
-    dispatch(createToggleAuth(true))
+    dispatch(toggleAuth(true))
   }
 
   return (
