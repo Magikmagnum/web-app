@@ -1,19 +1,20 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleAuth } from "../../store/auth";
+
 import '../Login/Login'
 import { FormInput, FormButton } from '../../components/Form/Form'
-import { useToggle } from "../../hook/useGalerie";
 
-interface IRegisterProps {
 
-}
+const Register = () => {
 
-const Register = ({ authenticated }: { authenticated: Function }) => {
+  const dispatch = useDispatch();
 
-  const [toggleState, setToggleState] = useToggle(true);
+  const __handleOnClick = () => {
+    dispatch(toggleAuth(true))
+  }
 
   return (
-
-
     <section className="loginContainer">
       <div className="loginCard">
         <div className="loginCardHeader">
@@ -29,7 +30,7 @@ const Register = ({ authenticated }: { authenticated: Function }) => {
           <FormInput name="email" type="text" label='Email' placeholder='Entrez votre login' />
           <FormInput name="tel" type="text" label='Numéro de téléphone' placeholder='Entre votre numéro de téléphone' />
           <FormInput name="password" type="password" label='Mot de passe' placeholder='Entre votre mot de passe' />
-          <FormButton />
+          <FormButton onClick={__handleOnClick} />
 
         </div>
       </div>

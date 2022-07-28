@@ -4,6 +4,9 @@ import './App.scss';
 import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
+import { Provider } from "react-redux";
+import { store } from "./store/store"
+
 
 
 function App() {
@@ -15,14 +18,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header>
-        <SideBar isOpen={sideBarIsOpen} toggle={toggleSideBar} />
-        <NavBar toggle={toggleSideBar} />
-      </header>
-      <Router />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+
+          <SideBar isOpen={sideBarIsOpen} toggle={toggleSideBar} />
+          <NavBar toggle={toggleSideBar} />
+
+        <Router />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 

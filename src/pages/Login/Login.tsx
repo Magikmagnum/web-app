@@ -1,24 +1,18 @@
-import * as React from 'react';
+import React from 'react';
+
+import { toggleAuth } from "../../store/auth";
+
 import './Login.scss';
 import { FormInput, FormButton } from '../../components/Form/Form';
-import { useIncrement, useAutoIncrement } from "../../hook/useGalerie";
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
-interface ILoginProps {
+const Login = () => {
 
-}
-
-const Login = ({ authenticated }: { authenticated: Function }) => {
-
-  // const [count, setCount] = useIncrement(0, 1);
-  const countAuto = useAutoIncrement(0);
-  const navigate = useNavigate();
-
+  const dispatch = useDispatch();
 
   const __handleOnClick = () => {
-    authenticated()
-    navigate("/")
+    dispatch(toggleAuth(true))
   }
 
   return (
@@ -34,13 +28,11 @@ const Login = ({ authenticated }: { authenticated: Function }) => {
         <div className="loginCardBody">
           <FormInput name='usename' type="text" label="Nom d'utilisateur" placeholder="Entrez votre nom d'utilisateur " />
           <FormInput name='password' type="password" label='Mot de passe' placeholder='Entre votre mot de passe' />
-          <FormButton value={"valider " + countAuto} onClick={__handleOnClick} />
+          <FormButton value={"valider"} onClick={__handleOnClick} />
         </div>
       </div>
     </section>
   );
 };
-
-
 
 export default Login;

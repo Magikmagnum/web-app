@@ -1,5 +1,6 @@
 import React from 'react'
 
+import './Card.scss';
 import BookmarkBorderIcon from '@mui/icons-material/Bookmark'
 import StarBorderIcon from '@mui/icons-material/Star'
 import RocketIcon from '@mui/icons-material/RocketLaunch'
@@ -31,14 +32,6 @@ export const Card = (
             callback?: Function
         }) => {
 
-    const IconCompte = ({ children, number = 0 }: { children: any, number?: number }) => {
-        return (
-            <div className="iconCompte">
-                {children}
-                <div className="">{number}</div>
-            </div>
-        )
-    }
 
     return (
         <div className={"item " + className} onClick={() => callback && callback()}>
@@ -77,16 +70,51 @@ export const CardSquare = (
         children,
         className,
         src,
-        callback
+        callback,
+        title,
+        note,
+        contrat,
     }:
         {
             children: string,
             className?: string,
             src?: string,
-            callback?: Function
+            callback?: Function,
+            title?: string,
+            note?: number,
+            contrat?: number,
 
         }) => {
-    return (<div className={"item " + className} onClick={() => callback && alert('coucou')}>
-        <img src={src} className="" alt="card" />
-    </div>)
+    return (
+        <div className={"item " + className} onClick={() => callback && alert('coucou')}>
+            <div className="cardHeader">
+                <img src={src} className="" alt="card" />
+            </div>
+            <div className="cardBody">
+
+                <div className='cardInfo'>
+                    <div className="cardTitle">{title}</div>
+                    <div className="cardIcon">
+                        <IconCompte number={note}>
+                            <StarBorderIcon />
+                        </IconCompte>
+                        <IconCompte number={contrat}>
+                            <BookmarkBorderIcon />
+                        </IconCompte>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+const IconCompte = ({ children, number = 0 }: { children: any, number?: number }) => {
+    return (
+        <div className="iconCompte">
+            {children}
+            <div className="">{number}</div>
+        </div>
+    )
 }

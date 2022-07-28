@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { useSelector } from 'react-redux';
+import { InitialState } from "../../store/auth";
+
 import { NavLink } from 'react-router-dom';
-import './NavBar.scss';
 import { FaBars } from 'react-icons/fa';
 
 import logo from '../../images/icon.png'
+import './NavBar.scss';
 
 
 const NavBar = ({ toggle }: { toggle: Function }) => {
 
-
-
+  const user = useSelector((state: InitialState) => state.auth.state)
 
   return (
     <nav className="nav">
@@ -23,23 +26,36 @@ const NavBar = ({ toggle }: { toggle: Function }) => {
         </div>
 
         <ul className="navMenu">
-          <>
-            <li className="navItem">
-              <NavLink className="navLink" to="/">Home</NavLink>
-            </li>
-            <li className="navItem">
-              <NavLink className="navLink" to="/register">Register</NavLink>
-            </li>
-          </>
-
-          <li className="navItem">
-            <NavLink className="navLink" to="/dashboard">DashBoard</NavLink>
-          </li>
-          <li className="navItem">
-            <NavLink className="navLink" to="/galleries">Gallerie</NavLink>
-          </li>
+          {
+            !user &&
+            <>
+              <li className="navItem">
+                <NavLink className="navLink" to="/">Home</NavLink>
+              </li>
+              <li className="navItem">
+                <NavLink className="navLink" to="/register">Register</NavLink>
+              </li>
+            </>
+          }
+          {
+            user &&
+            <>
+              <li className="navItem">
+                <NavLink className="navLink" to="/dashboard">DashBoard</NavLink>
+              </li>
+              <li className="navItem">
+                <NavLink className="navLink" to="/galleries">Gallerie</NavLink>
+              </li>
+            </>
+          }
         </ul>
-        <nav className="navBtn"> <NavLink className="navBtnLink" to="/Login">Sign In</NavLink></nav>
+        <nav className="navBtn">
+          {
+            user ?
+              <NavLink className="navBtnLink" to="/logout">Logout</NavLink> :
+              <NavLink className="navBtnLink" to="/Login">Sign In</NavLink>
+          }
+        </nav>
       </div >
     </nav >
   );

@@ -2,20 +2,14 @@ import * as React from 'react';
 import './Galleries.scss';
 
 import imgp1 from '../../images/banks/img1.jpeg'
-import imgp2 from '../../images/banks/img2.jpeg'
 import imgp3 from '../../images/banks/img3.jpeg'
 
-import imgp4 from '../../images/banks/img4.jpeg'
 import imgp5 from '../../images/banks/img5.jpeg'
 import imgp6 from '../../images/banks/img6.jpeg'
 import imgp7 from '../../images/banks/img7.webp'
 
 
-const Galleries = ({ logout }: { logout: Function }) => {
-
-
-  console.log('coucou', localStorage.getItem("user"))
-
+const Galleries = () => {
 
   return (
     <>
