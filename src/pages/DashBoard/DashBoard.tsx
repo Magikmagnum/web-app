@@ -33,8 +33,7 @@ const DashBoard = () => {
       </section>
 
       <section className="gallery2">
-        {data.map((e, key) => <CardSquare key={key} callback={() => __handleOnClick()} className="itemSquare" src={e.imageUri}>{e.imageUri}</CardSquare>)}
-
+        {data.map((e, key) => <CardSquare key={key} callback={() => __handleOnClick()} className="itemSquare" src={e.imageUri} title={e.title} note={e.note} contrat={e.contrat} >{e.imageUri}</CardSquare>)}
       </section>
       <section className="gallery">
         {data.map((e, key) => <Card key={key} callback={() => __handleOnClick()} className="" srcCover={e.imageUri} title={e.title} avatar={e.avatarUri} subtitle={e.adresse} note={e.note} contrat={e.contrat} realisation={e.realisation}>{e.imageUri}</Card>)}
