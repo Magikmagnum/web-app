@@ -60,8 +60,9 @@ const SideBar = ({ isOpen, toggle }: { isOpen: boolean, toggle: Function }) => {
 
           {user &&
             <>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/dashboard">DashBoard</NavLink>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/galleries">Gallerie</NavLink>
+              <NavLink className="sideBarLink" onClick={() => toggle()} to="/Catalog">Catalog</NavLink>
+              <NavLink className="sideBarLink" onClick={() => toggle()} to="/Desks">Desk</NavLink>
+              <NavLink className="sideBarLink" onClick={() => toggle()} to="/Settings">Settings</NavLink>
             </>
           }
         </div>

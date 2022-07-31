@@ -3,19 +3,19 @@ import { useNavigate } from 'react-router-dom'
 //import { useFetch } from "../../hook/useGalerie";
 import { Card, CardSquare } from "../../components/Card/Card";
 
-import './DashBoard.scss';
+import './Catalog.scss';
 import data from "../../helpers/competences";
 
 
 
-const DashBoard = () => {
+const Catalog = () => {
 
   // const [loadding, items] = useFetch("https://jsonplaceholder.typicode.com/comments?_limit=5")
   const navigate = useNavigate();
 
 
   const __handleOnClick = () => {
-    navigate('/galleries');
+    navigate('/SkillClient');
   }
 
 
@@ -24,7 +24,7 @@ const DashBoard = () => {
       <section className="loginContainer">
         <div className="loginCard">
           <div className="loginCcardHeader">
-            <h1 className="loginTitle"  >DashBoard</h1>
+            <h1 className="loginTitle"  >Catalog</h1>
             <p className="loginDescription">
               Have any questions or suggestions? Drop us a message. le compte est
             </p>
@@ -42,5 +42,5 @@ const DashBoard = () => {
   );
 };
 
-export default DashBoard;
+export default Catalog;
 

@@ -6,9 +6,11 @@ import { InitialState } from "../store/auth";
 import Login from '../pages/Login/Login';
 import Home from '../pages/Home/Home';
 import Register from '../pages/Register/Register';
-import DashBoard from '../pages/DashBoard/DashBoard';
-import Galleries from '../pages/Galleries/Galleries';
+import Catalog from '../pages/Catalog/Catalog';
+import Desks from '../pages/Desks/Desks';
 import Logout from '../pages/Logout/Logout';
+import Settings from '../pages/Settings/Settings';
+import SkillClient from '../pages/SkillClient/SkillClient';
 
 
 
@@ -28,12 +30,15 @@ const Router = () => {
       )}
       {user && (
         <>
-          <Route path='/galleries' element={<Galleries />} />
-          <Route path='/dashBoard' element={<DashBoard />} />
+          <Route path='/Desks' element={<Desks />} />
+          <Route path='/Catalog' element={<Catalog />} />
+          <Route path='/Catalog' element={<Catalog />} />
+          <Route path='/Settings' element={<Settings />} />
+          <Route path='/SkillClient' element={<SkillClient />} />
           <Route path='/logout' element={<Logout />} />
         </>
       )}
-      <Route path='*' element={<Navigate to={user ? "/dashBoard" : "/login"} />} />
+      <Route path='*' element={<Navigate to={user ? "/Catalog" : "/login"} />} />
     </Routes>
   );
 };

@@ -43,7 +43,7 @@ export const Card = (
                     <img src={avatar} alt='avatar' />
                 </div>
                 <div className='cardInfo'>
-                    <div className="cardTitle">{title}</div>
+                    <div className="cardTitle">{title} </div>
                     <div className="cardSubtitle">{subtitle}</div>
                     <div className="cardIcon">
                         <IconCompte number={note}>

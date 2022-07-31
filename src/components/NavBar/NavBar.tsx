@@ -41,10 +41,13 @@ const NavBar = ({ toggle }: { toggle: Function }) => {
             user &&
             <>
               <li className="navItem">
-                <NavLink className="navLink" to="/dashboard">DashBoard</NavLink>
+                <NavLink className="navLink" to="/Catalog">Catalog</NavLink>
               </li>
               <li className="navItem">
-                <NavLink className="navLink" to="/galleries">Gallerie</NavLink>
+                <NavLink className="navLink" to="/Desks">Desk</NavLink>
+              </li>
+              <li className="navItem">
+                <NavLink className="navLink" to="/Settings">Settings</NavLink>
               </li>
             </>
           }

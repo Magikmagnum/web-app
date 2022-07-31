@@ -5,11 +5,11 @@ import data from "../../helpers/competences";
 import { Card, CardSquare } from "../../components/Card/Card";
 
 
-interface IDashBoardProps {
+interface ICatalogProps {
 
 }
 
-const DashBoard: React.FunctionComponent<IDashBoardProps> = (props) => {
+const Catalog: React.FunctionComponent<ICatalogProps> = (props) => {
 
   //const [loadding, items] = useFetch("https://jsonplaceholder.typicode.com/comments?_limit=5")
 
@@ -19,7 +19,7 @@ const DashBoard: React.FunctionComponent<IDashBoardProps> = (props) => {
       <section className="loginContainer">
         <div className="loginCard">
           <div className="loginCcardHeader">
-            <h1 className="loginTitle"  >DashBoard</h1>
+            <h1 className="loginTitle"  >Catalog</h1>
             <p className="loginDescription">
               Have any questions or suggestions? Drop us a message. le compte est
             </p>
@@ -38,5 +38,5 @@ const DashBoard: React.FunctionComponent<IDashBoardProps> = (props) => {
   );
 };
 
-export default DashBoard;
+export default Catalog;
 

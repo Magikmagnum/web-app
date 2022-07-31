@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './Galleries.scss';
+import './Desks.scss';
 
 import imgp1 from '../../images/banks/img1.jpeg'
 import imgp3 from '../../images/banks/img3.jpeg'
@@ -9,7 +9,7 @@ import imgp6 from '../../images/banks/img6.jpeg'
 import imgp7 from '../../images/banks/img7.webp'
 
 
-const Galleries = () => {
+const Desks = () => {
 
   return (
     <>
@@ -17,7 +17,7 @@ const Galleries = () => {
       <section className="loginContainer">
         <div className="loginCard">
           <div className="loginCcardHeader">
-            <h1 className="loginTitle"  >Gallerie</h1>
+            <h1 className="loginTitle"  >Desk</h1>
             <p className="loginDescription">
               Have any questions or suggestions? Drop us a message. le compte est
             </p>
@@ -26,7 +26,7 @@ const Galleries = () => {
       </section>
 
 
-      <div className="galleries">
+      <div className="Desks">
         <Card className="img1">
           {imgp1}
         </Card>
@@ -59,7 +59,7 @@ const Galleries = () => {
 
 
 
-export default Galleries;
+export default Desks;
 
 
 
