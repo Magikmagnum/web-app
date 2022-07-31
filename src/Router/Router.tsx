@@ -1,29 +1,46 @@
-import * as React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Navigate, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { InitialState } from "../store/auth";
 
-import Login from '../Containers/Login/Login';
-import Register from '../Containers/Register/Register';
+import Login from '../pages/Login/Login';
+import Home from '../pages/Home/Home';
+import Register from '../pages/Register/Register';
+import Catalog from '../pages/Catalog/Catalog';
+import Desks from '../pages/Desks/Desks';
+import Logout from '../pages/Logout/Logout';
+import Settings from '../pages/Settings/Settings';
+import SkillClient from '../pages/SkillClient/SkillClient';
 
 
-interface IRouterProps {
 
-}
+const Router = () => {
 
-const Router: React.FunctionComponent<IRouterProps> = ( props ) => {
-    return (
-        <Routes>
-          <Route 
-            path='/' 
-            element={ <Login /> }
-          />
-          <Route 
-            path='/register' 
-            element={ <Register /> }
-          />
-        </Routes>
-    );
+  const user = useSelector((state: InitialState) => state.auth.state)
+
+  return (
+    <Routes>
+
+      {!user && (
+        <>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </>
+      )}
+      {user && (
+        <>
+          <Route path='/Desks' element={<Desks />} />
+          <Route path='/Catalog' element={<Catalog />} />
+          <Route path='/Catalog' element={<Catalog />} />
+          <Route path='/Settings' element={<Settings />} />
+          <Route path='/SkillClient' element={<SkillClient />} />
+          <Route path='/logout' element={<Logout />} />
+        </>
+      )}
+      <Route path='*' element={<Navigate to={user ? "/Catalog" : "/login"} />} />
+    </Routes>
+  );
 };
-
-// www.ekna.fr/
 
 export default Router;
