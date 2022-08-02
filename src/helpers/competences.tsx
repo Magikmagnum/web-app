@@ -2,7 +2,7 @@ let data = [
         {
                 //identité
                 title: 'Electricien',
-                nom: "Gansa diambote eric",
+                name: "Gansa diambote eric",
                 adresse: 'Angondje, Akanda / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/elec.jpg"),
@@ -22,7 +22,7 @@ let data = [
         {
                 //identité
                 title: 'Coiffeuse femme',
-                nom: "Nzange romi zita",
+                name: "Nzange romi zita",
                 adresse: 'Nzeng-Ayong, Libreville / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/coifure.jpg"),
@@ -42,7 +42,7 @@ let data = [
         {
                 //identité
                 title: 'Plombier',
-                nom: "Kassassa Divin",
+                name: "Kassassa Divin",
                 adresse: 'Avrobam, Akanda / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/plom.jpg"),
@@ -63,7 +63,7 @@ let data = [
         {
                 //identité
                 title: 'peintre en batiment',
-                nom: "Otankali sergino",
+                name: "Otankali sergino",
                 adresse: 'Charbonnages, Libreville / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/peintre.jpg"),
@@ -83,7 +83,7 @@ let data = [
         {
                 //identité
                 title: 'Mecanicien',
-                nom: "Gansa guelord",
+                name: "Gansa guelord",
                 adresse: 'Owendo, Libreville / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/gara.jpg"),
@@ -103,7 +103,7 @@ let data = [
         {
                 //identité
                 title: 'Nounou',
-                nom: "Beya Nanga grâce",
+                name: "Beya Nanga grâce",
                 adresse: 'Alibandeng, Libreville / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/nounou.jpg"),
@@ -123,7 +123,7 @@ let data = [
         {
                 //identité
                 title: 'Maçon',
-                nom: "Nteme patrick",
+                name: "Nteme patrick",
                 adresse: 'Louis, Libreville / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/macon.jpg"),
@@ -143,7 +143,7 @@ let data = [
         {
                 //identité
                 title: 'Anteniste',
-                nom: "Nze jordi",
+                name: "Nze jordi",
                 adresse: 'Plein-orety, Libreville / Gabon',
                 telephone: "074853544",
                 imageUri: require("../images/avatar/ant.jpg"),
