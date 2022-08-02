@@ -3,6 +3,7 @@ import React from 'react'
 import { FormButton } from '../../components/Form/Form';
 import { PostMiniCard } from '../../components/Post/Post';
 import { Opinion, Note } from '../../components/Opinion/Opinion';
+import Map from '../../components/Map/Map';
 
 
 import "./SkillClient.scss"
@@ -21,12 +22,11 @@ import { BiBus } from "react-icons/bi";
 
 import data from "../../helpers/competences";
 
-const map = require("../../images/map.jpeg");
-
 const SkillClient = () => {
 
-    const user = data[1];
+    const user = data[6];
     console.log(user)
+
     return (
         <>
             <section className="content" style={{}}>
@@ -53,6 +53,9 @@ const SkillClient = () => {
                     <div>
                         <Title title="A mois de 1km de toi" />
                         <Distance />
+                        <div style={{ margin: "42px 0 0 0", height: "280px" }}>
+                            <Map locations={user.coords} />
+                        </div>
                     </div>
                     <div>
                         <Title title="Ses réalisation" />
@@ -70,7 +73,8 @@ const SkillClient = () => {
                     </div>
                 </section>
                 <section className="right" style={{}}>
-                    <img src={map} alt="map" />
+
+                    <PostMiniCard src={data[1].imageUri} />
                 </section>
             </section>
         </>
