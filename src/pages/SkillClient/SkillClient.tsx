@@ -4,6 +4,7 @@ import { FormButton } from '../../components/Form/Form';
 import { PostMiniCard } from '../../components/Post/Post';
 import { Opinion, Note } from '../../components/Opinion/Opinion';
 import Map from '../../components/Map/Map';
+import { DashCounter } from '../../components/Dash/DashCounter';
 
 
 import "./SkillClient.scss"
@@ -41,13 +42,14 @@ const SkillClient = () => {
                         <div className="profilSubtitle">{user.adresse}</div>
                     </div>
                 </section>
-                <section className="dash" style={{}}>
-                    <DashItem title="note" score={user.note}><BiStar /> </DashItem>
-                    <DashItem title="contrat" score={user.contrat}><BiBookBookmark /> </DashItem>
-                    <DashItem title="réalisation" score={user.realisation}> <BiRocket /></DashItem>
-                    <DashItem title="aime" score={user.aime}> <BiHeart /></DashItem>
+                <DashCounter datasets={{
+                    note: user.note,
+                    contrat: user.contrat,
+                    realisation: user.realisation,
+                    aime: user.aime,
+                }} />
 
-                </section>
+                
                 <section className="left" style={{}}>
                     <FormButton value={"Faire une offre"} />
                     <div>

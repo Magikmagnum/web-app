@@ -11,7 +11,6 @@ export const PostMiniCard = ({ src, title, countImage, countLike, countComent }:
     return (
         <div className="PostMiniCardBox">
             <img src={src} alt="implementation" />
-            <h3>Coiffure afro</h3>
             <div className="PostMiniDash">
                 <div className="PostMiniDashItem">
                     <div className="PostMiniCount">

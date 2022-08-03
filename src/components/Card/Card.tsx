@@ -110,6 +110,22 @@ export const CardSquare = (
 
 
 
+
+
+export const CardLine = ({ children, number = 0 }: { children?: any, number?: number }) => {
+    return (
+        <div className="cardLineBox">
+            <div className="cardLineHeader">{children}</div>
+            <div className="cardLineBody">{children}</div>
+            <div className="cardLineFooter">{children}</div>
+        </div>
+    )
+}
+
+
+
+
+
 const IconCompte = ({ children, number = 0 }: { children: any, number?: number }) => {
     return (
         <div className="iconCompte">
