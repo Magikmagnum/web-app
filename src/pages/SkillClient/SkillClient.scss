@@ -97,7 +97,7 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 6px;
 
     .dashItem {
         display: flex;
@@ -112,7 +112,6 @@
             color: #000;
         }
     }
-
 }
 
 .left {

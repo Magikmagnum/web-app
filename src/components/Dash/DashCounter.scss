@@ -1,0 +1,26 @@
+
+.dash {
+    //background-color: "#d4a380";
+    grid-area: dash;
+    width: 100%;
+    height: 84px;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    .dashItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        color: #757575;
+
+        .score {
+            font-weight: bold;
+            color: #000;
+        }
+    }
+}

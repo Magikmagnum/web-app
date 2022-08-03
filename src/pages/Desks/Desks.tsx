@@ -2,14 +2,21 @@ import React, { useState } from 'react';
 import './Desks.scss';
 
 import UserTrafic from "../../helpers/userTrafic"
-import data from "../../helpers/competences"
-//import BarChart from '../../components/Chart/BarChart';
+
+import { DashCounter } from '../../components/Dash/DashCounter';
+
+
 import LineChart from '../../components/Chart/LineChart';
 import PieChart from '../../components/Chart/PieChart'
 import BarChart from '../../components/Chart/BarChart';
 import RadarChart from '../../components/Chart/RadarChart';
 import { Liste } from '../../components/Liste/Liste'
 
+import { CardLine } from '../../components/Card/CardLine';
+
+
+
+import data from "../../helpers/competences";
 
 const Desks = () => {
 
@@ -38,10 +45,6 @@ const Desks = () => {
       borderWidth: 0,
     }]
   });
-
-
-
-
 
   const [useData1, setUserData1] = useState({
     labels: UserTrafic.map((data) => data.year),
@@ -75,9 +78,6 @@ const Desks = () => {
     }]
   });
 
-
-
-
   const [useDataRadar, setUserDataRadar] = useState({
     labels: UserTrafic.map((data) => data.year),
     datasets: [
@@ -96,10 +96,6 @@ const Desks = () => {
       },
     ]
   });
-
-
-
-
 
   const [useDataDo, setUserDataDo] = useState({
     labels: UserTrafic.map((data) => data.year),
@@ -174,6 +170,15 @@ const Desks = () => {
 
       </div>
 
+      <section className="contentBox content-1">
+
+        <CardLine src={data[0].imageUri} title={data[0].title} subtitle={"Performances"} />
+        <CardLine src={data[1].imageUri} title={data[1].title} subtitle={"Performances"} />
+        <CardLine src={data[2].imageUri} title={data[2].title} subtitle={"Performances"} />
+        <CardLine src={data[3].imageUri} title={data[3].title} subtitle={"Performances"} />
+
+      </section>
+
       <Liste items={data} />
 
     </>
@@ -200,3 +205,4 @@ const StatBox = ({ children, score = 0, title, unity = "" }: { children: any, sc
     </div>
   )
 }
+

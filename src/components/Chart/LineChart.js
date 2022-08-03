@@ -19,12 +19,13 @@ function LineChart({ data }) {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: false
         },
         scales: {
             x: {
-                //display: false,
+                display: false,
                 min: 0,
                 max: 20,
 
@@ -56,7 +57,7 @@ function LineChart({ data }) {
     }
 
     return (
-        <Line data={data} options={options} />
+        <Line data={data} options={options} height={'100%'} width={'100%'} />
     )
 }
 
