@@ -93,22 +93,6 @@
             font-size: 14px;
         }
 
-        .cardIcon {
-
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
-            grid-gap: 20px;
-            max-width: 250px;
-            margin: 6px 0 0 0;
-            padding: 0;
-
-            svg {
-                fill: #ff9a28;
-                margin-right: 8px;
-                width: 18px;
-            }
-
-        }
     }
 
     .iconCompte {
@@ -116,4 +100,22 @@
         color: #000;
         align-items: center;
     }
+}
+
+
+.cardIcon {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+    grid-gap: 20px;
+    max-width: 250px;
+    margin: 0px 0 0 0;
+    padding: 0;
+
+    svg {
+        fill: #ff9a28;
+        margin-right: 8px;
+        width: 18px;
+    }
+
 }

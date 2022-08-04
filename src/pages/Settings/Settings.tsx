@@ -1,9 +1,10 @@
 import React from 'react'
 
-import "./../SkillClient/SkillClient.scss"
+import { Header } from "../../components/Header/Header"
 
 
 import '../Login/Login'
+import "./../SkillClient/SkillClient.scss"
 
 
 import data from "../../helpers/competences";
@@ -16,14 +17,8 @@ const SkillClient = () => {
         <>
             <section className="content" style={{}}>
 
-                <section className="profil" style={{}}>
-                    <img src={data[6].avatarUri} alt="coucou" />
-                    <div className='profilInfo'>
-                        <div className="profilTitle">{data[0].name}</div>
-                        <div className="profilSubtitle">{data[0].adresse}</div>
-                    </div>
-                </section>
 
+                <Header title={data[6].name} subtitle={data[0].adresse} srcImg={data[6].avatarUri} />
                 <section className="left" style={{}}>
                     <>
                         {

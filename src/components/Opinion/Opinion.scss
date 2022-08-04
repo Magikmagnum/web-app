@@ -1,36 +1,5 @@
 .commentBox {
-    margin: 24px 0;
-
-    .commentHeader {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        justify-content: flex-start;
-        align-items: center;
-
-        img {
-            height: 60px;
-            width: 60px;
-        }
-
-        .commentTitle {
-            font-size: 16px;
-            color: #666
-        }
-
-        .commentStart {
-            display: flex;
-            flex-direction: row;
-            gap: 6px;
-            font-size: 14px;
-            margin: 6px 0;
-        }
-
-        .commentDate {
-            font-size: 12px;
-            color: #666
-        }
-    }
+    margin: 64px 0 24px 0;
 
     .commentText {
         margin-top: 20px;
@@ -38,7 +7,7 @@
         color: #444;
         font-weight: 400;
         text-align: justify;
-
+        max-width: 380px;
     }
 
     .commentFooterValue {
@@ -62,6 +31,7 @@
         margin: 8px 0 20px 0;
         background-color: #dbdbdb;
         border-radius: 4px;
+        box-shadow: 0px 1px 8px 0px rgb(0 0 0 / 10%);
 
     }
 

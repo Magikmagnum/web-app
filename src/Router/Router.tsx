@@ -8,6 +8,7 @@ import Home from '../pages/Home/Home';
 import Register from '../pages/Register/Register';
 import Catalog from '../pages/Catalog/Catalog';
 import Desks from '../pages/Desks/Desks';
+import View from '../pages/Desks/View';
 import Logout from '../pages/Logout/Logout';
 import Settings from '../pages/Settings/Settings';
 import SkillClient from '../pages/SkillClient/SkillClient';
@@ -31,6 +32,7 @@ const Router = () => {
       {user && (
         <>
           <Route path='/Desks' element={<Desks />} />
+          <Route path='/View' element={<View />} />
           <Route path='/Catalog' element={<Catalog />} />
           <Route path='/Catalog' element={<Catalog />} />
           <Route path='/Settings' element={<Settings />} />

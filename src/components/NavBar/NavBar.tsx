@@ -5,6 +5,7 @@ import { InitialState } from "../../store/auth";
 
 import { NavLink } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
+import { BiMenuAltRight } from "react-icons/bi";
 
 import logo from '../../images/icon.png'
 import './NavBar.scss';
@@ -22,7 +23,7 @@ const NavBar = ({ toggle }: { toggle: Function }) => {
           <img src={logo} className="navBarLogo" alt='logo' />
         </span>
         <div className="mobileIcon" onClick={() => toggle()}>
-          <FaBars className="farBars" style={{ color: 'black' }} />
+          <BiMenuAltRight className="farBars" style={{ color: 'black' }} />
         </div>
 
         <ul className="navMenu">

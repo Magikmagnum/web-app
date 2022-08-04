@@ -1,101 +1,17 @@
 import React, { useState } from 'react';
 import './Desks.scss';
 
-import UserTrafic from "../../helpers/userTrafic"
-
-import { DashCounter } from '../../components/Dash/DashCounter';
-
-
-import LineChart from '../../components/Chart/LineChart';
-import PieChart from '../../components/Chart/PieChart'
-import BarChart from '../../components/Chart/BarChart';
-import RadarChart from '../../components/Chart/RadarChart';
-import { Liste } from '../../components/Liste/Liste'
-
 import { CardLine } from '../../components/Card/CardLine';
-
-
+import { FormButton } from '../../components/Form/Form';
+import { Title } from '../../components/Title/Title';
+import PieChart from '../../components/Chart/PieChart'
 
 import data from "../../helpers/competences";
+import UserTrafic from "../../helpers/userTrafic"
+
 
 const Desks = () => {
 
-  const [useData, setUserData] = useState({
-    labels: UserTrafic.map((data) => data.year),
-    datasets: [{
-      label: "User gain",
-      data: UserTrafic.map((data) => data.userGain),
-      fill: true, // permet de faire apparaitre le backgroundColor 
-      backgroundColor: '#0090071f',
-      borderColor: '#009007',
-      pointBorderColor: '#000',
-      pointBorderWidth: 0,
-      tension: 0.3,
-      borderWidth: 0,
-    },
-    {
-      label: "User gain",
-      data: UserTrafic.map((data) => data.userLost),
-      fill: true, // permet de faire apparaitre le backgroundColor 
-      backgroundColor: '#00000069',
-      borderColor: '#009007',
-      pointBorderColor: '#000',
-      pointBorderWidth: 0,
-      tension: 0.3,
-      borderWidth: 0,
-    }]
-  });
-
-  const [useData1, setUserData1] = useState({
-    labels: UserTrafic.map((data) => data.year),
-    datasets: [{
-      label: "User gain",
-      data: UserTrafic.map((data) => data.userLost),
-      fill: true, // permet de faire apparaitre le backgroundColor 
-      backgroundColor: '#0090071f',
-      borderColor: '#009007',
-      pointBorderColor: '#000',
-      pointBorderWidth: 0,
-      //borderWidth: 2,
-      tension: 0.3,
-    }]
-  });
-
-  const [useDataBar, setUserDataBar] = useState({
-    labels: UserTrafic.map((data) => data.year),
-    datasets: [{
-      label: "User gain",
-      data: UserTrafic.map((data) => data.userLost),
-      fill: true, // permet de faire apparaitre le backgroundColor 
-      backgroundColor: '#0090071f',
-      borderColor: '#009007',
-      pointBorderColor: '#000',
-      pointBorderWidth: 0,
-      tension: 0.3,
-      //borderWidth: 3,
-      borderRadius: Number.MAX_VALUE,
-      borderSkipped: false,
-    }]
-  });
-
-  const [useDataRadar, setUserDataRadar] = useState({
-    labels: UserTrafic.map((data) => data.year),
-    datasets: [
-      {
-        label: "User gain",
-        data: UserTrafic.map((data) => data.userLost),
-        fill: true, // permet de faire apparaitre le backgroundColor 
-        backgroundColor: '#0090071f',
-        borderColor: '#009007',
-        pointBorderColor: '#000',
-        //pointBorderWidth: 0,
-        //tension: 0.3,
-        borderWidth: 0,
-        //borderRadius: Number.MAX_VALUE,
-        borderSkipped: false,
-      },
-    ]
-  });
 
   const [useDataDo, setUserDataDo] = useState({
     labels: UserTrafic.map((data) => data.year),
@@ -128,74 +44,50 @@ const Desks = () => {
 
   return (
     <>
+      <section className="contentDesk">
 
-      <section className="loginContainer">
-        <div className="loginCard">
-          <div className="loginCcardHeader">
-            <h1 className="loginTitle"  >Desk</h1>
-            <p className="loginDescription">
-              Have any questions or suggestions? Drop us a message. le compte est
-            </p>
+        <section className="group">
+          <Title title="Tes competences" />
+          <CardLine src={data[0].imageUri} title={data[0].title} subtitle={"Performances"} />
+          <CardLine src={data[1].imageUri} title={data[1].title} subtitle={"Performances"} />
+          <CardLine src={data[2].imageUri} title={data[2].title} subtitle={"Performances"} />
+          <CardLine src={data[3].imageUri} title={data[3].title} subtitle={"Performances"} />
+
+        </section>
+
+        <section className="stat">
+          <Title title="Statistic cumulative" />
+          <div className="desks">
+            <StatBox score={24.56} title="Offre de travail reçus" unity="total" style={{ width: "100px", margin: "24px 0" }} >
+              <PieChart data={useDataDo} />
+            </StatBox>
+
+            <StatBox score={24.56} title="Offre de travail emis" unity="total" style={{ width: "100px", margin: "24px 0" }} >
+              <PieChart data={useDataDo} />
+            </StatBox>
+
+
           </div>
-        </div>
-      </section>
-
-
-      <div className="Desks">
-        <StatBox score={193627} title="Nombre de visiteur" unity="Jours">
-          <LineChart data={useData} />
-        </StatBox>
-        <StatBox score={49} title="Nombre d'offre" unity="Mois">
-          <LineChart data={useData} />
-        </StatBox>
-        <StatBox score={243} title="Nombre d'abonné" >
-          <LineChart data={useData1} />
-        </StatBox>
-        <StatBox score={2341} title="Nombre de commentaire" >
-          <BarChart data={useDataBar} />
-        </StatBox>
-        <StatBox score={2341} title="Nombre de commentaire" >
-          <BarChart data={useData} />
-        </StatBox>
-        <StatBox score={24.56} title="Nombre de Likes" unity="Likes">
-          <PieChart data={useDataDo} />
-        </StatBox>
-        <StatBox score={24.56} title="Performances" unity="Likes">
-          <RadarChart data={useDataRadar} />
-        </StatBox>
-
-        <StatBox score={24.56} title="Performances" unity="Likes">
-          <RadarChart data={useData} />
-        </StatBox>
-
-      </div>
-
-      <section className="contentBox content-1">
-
-        <CardLine src={data[0].imageUri} title={data[0].title} subtitle={"Performances"} />
-        <CardLine src={data[1].imageUri} title={data[1].title} subtitle={"Performances"} />
-        <CardLine src={data[2].imageUri} title={data[2].title} subtitle={"Performances"} />
-        <CardLine src={data[3].imageUri} title={data[3].title} subtitle={"Performances"} />
+          <Title title="Vos colaborateurs" />
+          
+        </section>
 
       </section>
-
-      <Liste items={data} />
 
     </>
   );
 };
 
-
-
 export default Desks;
 
+//<FormButton />
 
 
-const StatBox = ({ children, score = 0, title, unity = "" }: { children: any, score?: number, title: string, unity?: string }) => {
+const StatBox = ({ children, score = 0, title, unity = "", style = {} }: { children: any, score?: number, title: string, unity?: string, style?: any }) => {
   return (
-    <div className='statBox'>
+    <div className='statBox' >
       <div className="statTitle">{title}</div>
-      <div className="statGraph">
+      <div className="statGraph" style={style}>
         {children}
       </div>
       <div className="statScore">
@@ -205,4 +97,3 @@ const StatBox = ({ children, score = 0, title, unity = "" }: { children: any, sc
     </div>
   )
 }
-

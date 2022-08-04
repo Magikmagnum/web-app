@@ -1,32 +1,29 @@
 import React from 'react'
 
 import { FormButton } from '../../components/Form/Form';
-import { PostMiniCard } from '../../components/Post/Post';
+//import { PostMiniCard } from '../../components/Post/Post';
 import { Opinion, Note } from '../../components/Opinion/Opinion';
-import Map from '../../components/Map/Map';
+//import Map from '../../components/Map/Map';
 import { DashCounter } from '../../components/Dash/DashCounter';
+import { CardPost } from '../../components/Card/CardPost';
+import { Title } from '../../components/Title/Title';
 
 
 import "./SkillClient.scss"
-import { BiRocket } from "react-icons/bi";
-import { BiBookBookmark } from "react-icons/bi";
-import { BiStar } from "react-icons/bi";
-//import { BiCommentDetail } from "react-icons/bi";
-import { BiHeart } from "react-icons/bi";
+
 
 import { BiCycling } from "react-icons/bi";
 import { BiWalk } from "react-icons/bi";
 import { BiCar } from "react-icons/bi";
 import { BiBus } from "react-icons/bi";
-
+import { HeaderMedium } from "../../components/Header/Header"
 
 
 import data from "../../helpers/competences";
 
 const SkillClient = () => {
 
-    const user = data[6];
-    console.log(user)
+    const user = data[1];
 
     return (
         <>
@@ -35,13 +32,10 @@ const SkillClient = () => {
                 <header className="header" style={{}}>
                     <img src={user.imageUri} alt="coucou" />
                 </header>
-                <section className="profil" style={{}}>
-                    <img src={user.avatarUri} alt="coucou" />
-                    <div className='profilInfo'>
-                        <div className="profilTitle">{user.title}</div>
-                        <div className="profilSubtitle">{user.adresse}</div>
-                    </div>
+                <section className="profil" >
+                    <HeaderMedium srcImg={user.avatarUri} title={user.title} subtitle={user.name} description={user.adresse} />
                 </section>
+
                 <DashCounter datasets={{
                     note: user.note,
                     contrat: user.contrat,
@@ -49,34 +43,31 @@ const SkillClient = () => {
                     aime: user.aime,
                 }} />
 
-                
-                <section className="left" style={{}}>
+
+                <section className="left" >
                     <FormButton value={"Faire une offre"} />
                     <div>
                         <Title title="A mois de 1km de toi" />
                         <Distance />
-                        <div style={{ margin: "42px 0 0 0", height: "280px" }}>
-                            <Map locations={user.coords} />
-                        </div>
+
                     </div>
-                    <div>
-                        <Title title="Ses réalisation" />
-                        <PostMiniCard src={data[1].imageUri} />
-                    </div>
+
                     <div>
                         <Title title="Note et avis" />
                         <Note />
-                        <Opinion src={data[4].avatarUri} title="Eric Gansa" />
-                        <Opinion src={data[2].avatarUri} title="Ethiene Mavougou" />
-                        <Opinion src={data[3].avatarUri} title="Davide Le bouchet" />
+                        <Opinion src={data[4].avatarUri} title="Eric Gansa" score={3} />
+                        <Opinion src={data[2].avatarUri} title="Ethiene Mavougou" score={4} />
+                        <Opinion src={data[3].avatarUri} title="Davide Le bouchet" score={0} />
                     </div>
                     <div>
                         <Title title="Autres competences" />
                     </div>
                 </section>
-                <section className="right" style={{}}>
-
-                    <PostMiniCard src={data[1].imageUri} />
+                <section className="right" >
+                    <CardPost dataset={data[1]} />
+                    <CardPost dataset={data[3]} />
+                    <CardPost dataset={data[2]} />
+                    <CardPost dataset={data[4]} />
                 </section>
             </section>
         </>
@@ -85,31 +76,6 @@ const SkillClient = () => {
 
 export default SkillClient;
 
-
-//<DashItem title="commentaire" score={0}> <BiCommentDetail /></DashItem>
-
-const DashItem = ({ children, title, score = 0 }: { children: any, score?: number, title: string }) => {
-    return (
-        <div className="dashItem">
-            {children}
-            <div className="score">{score}</div>
-            <div className="tile">{title}</div>
-        </div>
-    )
-}
-
-
-const Title = ({ title, subtitle }: { title: string, subtitle?: string }) => {
-    return (
-        <div className="titleBox">
-            <h1 className="title">
-                {title}
-            </h1>
-            <h3 className="subTitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus obcaecati harum architecto.
-            </h3>
-        </div>
-    )
-}
 
 
 const Distance = ({ distance }: { distance?: number }) => {
@@ -144,3 +110,10 @@ const Distance = ({ distance }: { distance?: number }) => {
         </div>
     </div>
 }
+
+/**
+ <div>
+                        <Title title="Ses réalisation" />
+                        <PostMiniCard src={data[1].imageUri} />
+                    </div>
+ */

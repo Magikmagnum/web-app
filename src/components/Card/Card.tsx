@@ -1,9 +1,12 @@
 import React from 'react'
 
 import './Card.scss';
-import BookmarkBorderIcon from '@mui/icons-material/Bookmark'
-import StarBorderIcon from '@mui/icons-material/Star'
-import RocketIcon from '@mui/icons-material/RocketLaunch'
+import { Header } from "../../components/Header/Header"
+
+import { BiRocket } from "react-icons/bi";
+import { BiBookBookmark } from "react-icons/bi";
+import { BiStar } from "react-icons/bi";
+
 
 
 
@@ -35,28 +38,24 @@ export const Card = (
 
     return (
         <div className={"item " + className} onClick={() => callback && callback()}>
+
             <div className="cardHeader">
                 <img src={srcCover} className="" alt="card" />
             </div>
             <div className="cardBody">
-                <div className="cardAvatar">
-                    <img src={avatar} alt='avatar' />
-                </div>
-                <div className='cardInfo'>
-                    <div className="cardTitle">{title} </div>
-                    <div className="cardSubtitle">{subtitle}</div>
+                <Header srcImg={avatar} title={title} description={subtitle}>
                     <div className="cardIcon">
                         <IconCompte number={note}>
-                            <StarBorderIcon />
+                            <BiStar />
                         </IconCompte>
                         <IconCompte number={contrat}>
-                            <BookmarkBorderIcon />
+                            <BiBookBookmark />
                         </IconCompte>
                         <IconCompte number={realisation}>
-                            <RocketIcon />
+                            <BiRocket />
                         </IconCompte>
                     </div>
-                </div>
+                </Header>
             </div>
         </div>)
 }
@@ -96,10 +95,10 @@ export const CardSquare = (
                     <div className="cardTitle">{title}</div>
                     <div className="cardIcon">
                         <IconCompte number={note}>
-                            <StarBorderIcon />
+                            <BiStar />
                         </IconCompte>
                         <IconCompte number={contrat}>
-                            <BookmarkBorderIcon />
+                            <BiBookBookmark />
                         </IconCompte>
                     </div>
                 </div>

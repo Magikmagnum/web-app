@@ -1,10 +1,37 @@
-.Desks {
+.contentDesk {
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 100px auto 0;
+    grid-template-columns: 6fr 4fr;
+    grid-gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: center;
+
+    grid-template-areas:
+        "group stat";
+
+    @media screen and (max-width: 820px) {}
+
+
+
+    .group {
+        grid-area: group;
+    }
+
+    .stat {
+        grid-area: stat;
+        //border-radius: 16px;
+        //height: 300px;
+    }
+}
+
+.desks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //margin: 100px auto 0;
     max-width: 1300px;
     grid-gap: 2rem;
-    padding: 1rem;
+    padding: 0 1rem;
 
     @media screen and (max-width: 712px) {
         grid-template-columns: repeat(2, 1fr);
@@ -17,11 +44,10 @@
         grid-gap: 24px;
         margin: 0px auto 0;
     }
-
-
-
-
 }
+
+
+
 
 .statBox {
     display: grid;
@@ -55,8 +81,6 @@
     .statScore {
         grid-area: statScore;
         display: flex;
-        display: flex;
-        //justify-content: flex-end;
     }
 
     position: relative;
