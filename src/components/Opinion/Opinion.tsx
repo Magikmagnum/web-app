@@ -1,31 +1,21 @@
 import React from 'react'
-import { BiStar } from "react-icons/bi";
+import { HeaderStar } from "../Header/Header"
 
+
+import { BiStar } from "react-icons/bi";
 import "./Opinion.scss"
 
-export const Opinion = ({ src, title }: { src: string, title: string }) => {
+
+export const Opinion = ({ src, title, score = 0 }: { src: string, title: string, score?: number }) => {
     return (
         <div className="commentBox">
-            <div className="commentHeader">
-                <img src={src} alt="avatar comment" />
-                <div className="commentInfo">
-                    <h3 className="commentTitle">{title}</h3>
-                    <div className="commentStart">
-                        <BiStar />
-                        <BiStar />
-                        <BiStar />
-                        <BiStar />
-                        <BiStar />
-                    </div>
-                    <div className="commentDate">Le 05/06/2021</div>
-                </div>
-            </div>
+            <HeaderStar srcImg={src} title={title} score={score} />
             <div className="commentBody">
-                <p className="commentText">
+                <p className="text textComment">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dolore ipsa eius obcaecati harum iure sed unde, ab fuga quo natus? Officiis blanditiis fuga consectetur voluptatem tempora perspiciatis, accusamus architecto.
                 </p>
             </div>
-            <p className="commentFooter commentText">Cet avis, vous a ete utile? <span className="commentFooterValue">Oui</span> <span className="commentFooterValue">Non</span></p>
+            <p className="commentFooter text textComment">Cet avis, vous a ete utile? <span className="commentFooterValue">Oui</span> <span className="commentFooterValue">Non</span></p>
         </div>
     )
 }

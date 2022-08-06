@@ -5,7 +5,7 @@ import { InitialState } from "../../store/auth";
 
 import { NavLink } from 'react-router-dom';
 import './SideBar.scss';
-import { FaStarOfLife } from 'react-icons/fa';
+import { BiChevronUp } from 'react-icons/bi';
 
 import logo from '../../images/icon.png'
 
@@ -45,7 +45,7 @@ const SideBar = ({ isOpen, toggle }: { isOpen: boolean, toggle: Function }) => {
   return (
     <nav className="sideBarContainer" style={sideBarContainerToggel}>
       <div className="icon">
-        <FaStarOfLife className="closeIcon" onClick={() => toggle()} />
+        <BiChevronUp className="closeIcon" onClick={() => toggle()} />
       </div>
       <div className="sideBarWrapper">
 
