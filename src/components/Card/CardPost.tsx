@@ -51,9 +51,9 @@ export const CardPost = ({ dataset }: { dataset: User }) => {
 
 
       <div className="cardPostBody">
-        <div className="cardPostBodyDesc">
+        <p className="text textParagraph">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!
-        </div>
+        </p>
         <div className="cardPostBodyImage"><img alt='card' src={dataset.imageUri} /></div>
       </div>
 

@@ -11,11 +11,11 @@ export const Opinion = ({ src, title, score = 0 }: { src: string, title: string,
         <div className="commentBox">
             <HeaderStar srcImg={src} title={title} score={score} />
             <div className="commentBody">
-                <p className="commentText">
+                <p className="text textComment">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dolore ipsa eius obcaecati harum iure sed unde, ab fuga quo natus? Officiis blanditiis fuga consectetur voluptatem tempora perspiciatis, accusamus architecto.
                 </p>
             </div>
-            <p className="commentFooter commentText">Cet avis, vous a ete utile? <span className="commentFooterValue">Oui</span> <span className="commentFooterValue">Non</span></p>
+            <p className="commentFooter text textComment">Cet avis, vous a ete utile? <span className="commentFooterValue">Oui</span> <span className="commentFooterValue">Non</span></p>
         </div>
     )
 }

@@ -32,16 +32,19 @@ const SkillClient = () => {
                 <header className="header" style={{}}>
                     <img src={user.imageUri} alt="coucou" />
                 </header>
+
+
                 <section className="profil" >
                     <HeaderMedium srcImg={user.avatarUri} title={user.title} subtitle={user.name} description={user.adresse} />
                 </section>
-
                 <DashCounter datasets={{
                     note: user.note,
                     contrat: user.contrat,
                     realisation: user.realisation,
                     aime: user.aime,
                 }} />
+                <section className="dashContent">
+                </section>
 
 
                 <section className="left" >
