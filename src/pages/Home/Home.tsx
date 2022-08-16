@@ -16,8 +16,8 @@ const Catalog: React.FunctionComponent<ICatalogProps> = (props) => {
 
   return (
     <>
-      <section className="loginContainer">
-        <div className="loginCard">
+      <section className="formContainer">
+        <div className="formCard">
           <div className="loginCcardHeader">
             <h1 className="loginTitle"  >Catalog</h1>
             <p className="loginDescription">

@@ -51,13 +51,14 @@
 
         display: flex;
         justify-content: center;
+        flex-direction: column;
         grid-area: cardLineFooter;
         //background-color: #000;
         //height: 100px;
         border-radius: 16px;
         //min-width: 240px;
         padding: 20px;
-        max-width: 500px;
+        //max-width: 500px;
     }
 
     .cardLineSet {
@@ -74,8 +75,16 @@
 
 
 .dashItem {
-    //background-color: #e6f2e4;
-    //padding: 12px;
-    //border-radius: 16px;
     grid-gap: 6px;
+}
+
+
+.cardLineItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 54px;
+    width: 100%;
+    margin: 20px 0;
+    //background-color: #dfdfdf;
+
 }

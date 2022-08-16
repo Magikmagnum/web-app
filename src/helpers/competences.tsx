@@ -13,10 +13,51 @@ let data = [
                 //Competence
                 id: 1,
                 avatarUri: require("../images/avatar/img1.jpg"),
+                realisation: 3,
                 note: 4,
                 contrat: 12,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/electricien/imgelec1.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/electricien/imgelec2.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/electricien/imgelec3.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        }
+                ],
                 commentaire: 3
         },
         {
@@ -33,10 +74,51 @@ let data = [
                 //Competence
                 id: 2,
                 avatarUri: require("../images/avatar/img9.jpg"),
+                realisation: 3,
                 note: 1,
                 contrat: 20,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Coiffure afro',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/coiffureBlack/imgcf1.webp"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Coiffure afro 2',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/coiffureBlack/imgcf2.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Coiffure afro 3',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/coiffureBlack/imgcf3.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        }
+                ],
                 commentaire: 6
         },
         {
@@ -53,10 +135,51 @@ let data = [
                 //Competence
                 id: 3,
                 avatarUri: require("../images/avatar/img10.jpg"),
+                realisation: 3,
                 note: 3,
                 contrat: 7,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/plombier/imgelplom1.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/plombier/imgelplom2.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/plombier/imgelplom3.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        }
+                ],
                 commentaire: 1
 
         },
@@ -74,10 +197,51 @@ let data = [
                 //Competence
                 id: 4,
                 avatarUri: require("../images/avatar/img8.jpg"),
+                realisation: 3,
                 note: 2,
                 contrat: 11,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/paintre/imgpaintre2.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/paintre/imgpaintre3.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/paintre/imgpaintre4.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        }
+                ],
                 commentaire: 1
         },
         {
@@ -94,10 +258,51 @@ let data = [
                 //Competence
                 id: 5,
                 avatarUri: require("../images/avatar/img6.jpg"),
+                realisation: 3,
                 note: 3,
                 contrat: 10,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/mecanicien/imgmecanicien1.webp"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/mecanicien/imgmecanicien2.jpeg"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: [
+                                        require("../images/avatar/mecanicien/imgmecanicien3.webp"),
+                                        //require("../images/avatar/"),
+                                        //require("../images/avatar/"),
+                                ]
+                        }
+                ],
                 commentaire: 4
         },
         {
@@ -114,10 +319,39 @@ let data = [
                 //Competence
                 id: 6,
                 avatarUri: require("../images/avatar/img4.jpg"),
+                realisation: 3,
                 note: 0,
                 contrat: 0,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        }
+                ],
                 commentaire: 5
         },
         {
@@ -134,10 +368,39 @@ let data = [
                 //Competence
                 id: 7,
                 avatarUri: require("../images/avatar/img7.jpg"),
+                realisation: 3,
                 note: 3,
                 contrat: 11,
                 aime: 4,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        }
+                ],
                 commentaire: 2
         },
         {
@@ -154,10 +417,39 @@ let data = [
                 //Competence
                 id: 8,
                 avatarUri: require("../images/avatar/img3.jpg"),
+                realisation: 3,
                 note: 5,
                 contrat: 2,
                 aime: 12,
-                realisation: 2,
+                implementation: [
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        },
+                        {
+                                title: 'Voluptatem harum eveniet itaque',
+                                description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!',
+                                created: '14/02/2022',
+                                likeCount: 32,
+                                commentCount: 721,
+                                sharedCount: 6,
+                                realisationUri: []
+                        }
+                ],
                 commentaire: 6
         },
 ];

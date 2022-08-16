@@ -52,11 +52,9 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
         <div className="footerCardContainer">
           <FooterCard img={imgp1} />
           <FooterCard img={imgp2} />
-          <FooterCard img={imgp3} />
           <FooterCard img={imgp4} />
           <FooterCard img={imgp5} />
           <FooterCard img={imgp7} />
-          <FooterCard img={imgp6} />
         </div>
 
       </div>

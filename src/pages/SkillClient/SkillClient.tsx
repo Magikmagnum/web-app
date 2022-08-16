@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 
 import { FormButton } from '../../components/Form/Form';
 //import { PostMiniCard } from '../../components/Post/Post';
@@ -7,6 +7,7 @@ import { Opinion, Note } from '../../components/Opinion/Opinion';
 import { DashCounter } from '../../components/Dash/DashCounter';
 import { CardPost } from '../../components/Card/CardPost';
 import { Title } from '../../components/Title/Title';
+import { useLocation } from "react-router-dom";
 
 
 import "./SkillClient.scss"
@@ -21,9 +22,23 @@ import { HeaderMedium } from "../../components/Header/Header"
 
 import data from "../../helpers/competences";
 
+type LocationState = {
+    id: number;
+}
+
 const SkillClient = () => {
 
-    const user = data[1];
+    const location = useLocation();
+    const { id } =  useMemo(() => location.state as LocationState, [location.state])
+    
+    const [user, setUser] = useState(data[0]);
+
+    useEffect(() => {
+        setUser(data[id - 1])
+    }, [id])
+
+
+
 
     return (
         <>
@@ -58,19 +73,16 @@ const SkillClient = () => {
                     <div>
                         <Title title="Note et avis" />
                         <Note />
-                        <Opinion src={data[4].avatarUri} title="Eric Gansa" score={3} />
-                        <Opinion src={data[2].avatarUri} title="Ethiene Mavougou" score={4} />
-                        <Opinion src={data[3].avatarUri} title="Davide Le bouchet" score={0} />
+                        <Opinion src={data[4].avatarUri} title={data[4].name} score={3} />
+                        <Opinion src={data[2].avatarUri} title={data[2].name} score={4} />
+                        <Opinion src={data[3].avatarUri} title={data[3].name} score={0} />
                     </div>
                     <div>
                         <Title title="Autres competences" />
                     </div>
                 </section>
                 <section className="right" >
-                    <CardPost dataset={data[1]} />
-                    <CardPost dataset={data[3]} />
-                    <CardPost dataset={data[2]} />
-                    <CardPost dataset={data[4]} />
+                    {user.implementation.map(e => <CardPost dataset={e} skill={user.title} name={user.name} avatar={user.avatarUri} />)}
                 </section>
             </section>
         </>

@@ -14,9 +14,17 @@ import { BiComment } from "react-icons/bi";
 import { BiShareAlt } from "react-icons/bi";
 
 
+type Implements = {
+  title: string;
+  description: string;
+  created: string;
+  likeCount: number;
+  commentCount: number;
+  sharedCount: number;
+  realisationUri: any[];
+}
 
-
-type User = {
+/*type User = {
   title: string;
   name: string;
   adresse: string;
@@ -33,18 +41,17 @@ type User = {
   aime: number;
   realisation: number;
   commentaire: number;
-}
+  implementation: {}[]
 
-export const CardPost = ({ dataset }: { dataset: User }) => {
+}*/
+
+export const CardPost = ({ dataset, skill, name, avatar }: { dataset: Implements, skill: string, name: string, avatar: string }) => {
 
   const date = new Date().toLocaleDateString();;
 
   return (
     <div className=' cardPost content-1 '>
-
-
-
-      <Header srcImg={dataset.avatarUri} title={"insertion professionnelle"} subtitle={dataset.title} description={dataset.name} />
+      <Header srcImg={avatar} title={dataset.title} subtitle={skill} description={name} />
       <div className="cardPostHeaderDesc" style={{ marginTop: 24 }}>
         {date.toString()}
       </div>
@@ -52,9 +59,10 @@ export const CardPost = ({ dataset }: { dataset: User }) => {
 
       <div className="cardPostBody">
         <p className="text textParagraph">
+
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem harum eveniet itaque voluptate unde doloribus distinctio, perspiciatis deserunt qui aliquid molestias, iusto a non, similique consequuntur dicta odio natus nisi!
         </p>
-        <div className="cardPostBodyImage"><img alt='card' src={dataset.imageUri} /></div>
+        <div className="cardPostBodyImage"><img alt='card' src={dataset.realisationUri[0]} /></div>
       </div>
 
       <div className="cardPostDash">

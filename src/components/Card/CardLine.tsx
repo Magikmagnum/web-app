@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { DashCounter } from '../../components/Dash/DashCounter';
+import { HeaderMedium, HeaderMini } from '../../components/Header/Header';
 
 
 import data from "../../helpers/competences";
@@ -19,18 +20,16 @@ export const CardLine = ({ src, title, subtitle }: { src?: string, title?: any, 
         return data[6]
     }, [])
 
+    const __handelClick = useCallback(() => {
+        setIsOpen(e => !e)
+    }, [])
 
 
 
     return (
         <div className="cardLineBox">
             <div className="cardLineHeader">
-                <div className="cardLineImage">
-                    <img src={src} alt="Skill" />
-                </div>
-                <div className="cardLineTitle">
-                    {title}
-                </div>
+                <HeaderMedium srcImg={src} title={title} />
             </div>
             <div className="cardLineBody">
                 <DashCounter datasets={{
@@ -42,20 +41,30 @@ export const CardLine = ({ src, title, subtitle }: { src?: string, title?: any, 
                 />
             </div>
 
-            <div className="cardLineSet">
+            <div className="cardLineSet" onClick={__handelClick}>
                 <BiDotsVerticalRounded />
             </div>
 
             {
                 isOpen &&
                 <div className="cardLineFooter">
-                    <div className="cardLineItems">
-                        
-
-                    </div>
+                    <Item srcImg={src} title={title} />
+                    <Item srcImg={src} title={title} />
+                    <Item srcImg={src} title={title} />
                 </div>
 
             }
+        </div>
+    )
+}
+
+const Item = ({ srcImg, title }: { srcImg: string | undefined, title: string }) => {
+    return (
+        <div className="cardLineItems">
+            <HeaderMini srcImg={srcImg} title={title} description={"Il y a 6 jours"} />
+            <div className="text textComment">300 euro / jours</div>
+            <div className="text textComment">5 decembre 2022 - 12 fevrier 2023</div>
+            <div className="text textComment">{("Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quos quia suscipit perferendis et tenetur ipsum eveniet at earum. Necessitatibus, asperiores? Nobis excepturi harum natus aperiam temporibus reprehenderit deserunt praesentium?").substr(0, 50)}</div>
         </div>
     )
 }

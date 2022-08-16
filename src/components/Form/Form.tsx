@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import './Form.scss';
 
 
-export const FormInput = ({ label, name, type = "text", placeholder = "", value = "" }: { label: string, name: string, placeholder?: string, type?: string, value?: string }) => {
+export const FormInput = ({ label, name, type = "text", placeholder = "", value = '', setValue }: { label: string, name: string, placeholder?: string, type?: string, value?: string, setValue: React.Dispatch<React.SetStateAction<string>> }) => {
 
-    const [val, setValue] = useState(value);
 
     const __handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
@@ -17,7 +15,7 @@ export const FormInput = ({ label, name, type = "text", placeholder = "", value 
     return (
         <div className="form">
             <label className="formLabel" htmlFor={name}>{label}</label>
-            <input className="formImput" type={type} id={name} value={val} placeholder={placeholder} onChange={(e) => __handleValueChange(e)} />
+            <input className="formImput" type={type} id={name} value={value} placeholder={placeholder} onChange={(e) => __handleValueChange(e)} />
         </div>
     )
 }

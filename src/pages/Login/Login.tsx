@@ -1,38 +1,77 @@
-import React from 'react';
+import React, { FormEventHandler, SyntheticEvent, useState, useEffect } from 'react';
 
-import { toggleAuth } from "../../store/auth";
-
-import './Login.scss';
-import { FormInput, FormButton } from '../../components/Form/Form';
 import { useDispatch } from 'react-redux';
+import { toggleAuth } from "../../store/auth";
+import { useMutation } from 'react-query'
+
+import { FormInput, FormButton } from '../../components/Form/Form'
+
+import { loginQuery, DataAuthType, AuthType, ErrorType } from "../../store/api/ratisseurApi"
 
 
 const Login = () => {
 
-  const dispatch = useDispatch();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-  const __handleOnClick = () => {
-    dispatch(toggleAuth(true))
-  }
+    const dispatch = useDispatch();
 
-  return (
-    <section className="loginContainer">
-      <div className="loginCard">
-        <div className="loginCardHeader">
-          <h1 className="loginTitle"  >Connectez-vous</h1>
-          <p className="loginDescription">
-            Have any questions or suggestions? Drop us a message
-          </p>
-        </div>
+    const mutation = useMutation<DataAuthType, ErrorType, AuthType>(
+        async ({ username, password }: AuthType) => loginQuery({ username, password })
+    );
 
-        <div className="loginCardBody">
-          <FormInput name='usename' type="text" label="Nom d'utilisateur" placeholder="Entrez votre nom d'utilisateur " />
-          <FormInput name='password' type="password" label='Mot de passe' placeholder='Entre votre mot de passe' />
-          <FormButton value={"valider"} onClick={__handleOnClick} />
-        </div>
-      </div>
-    </section>
-  );
+    const __handleOnClick: FormEventHandler<HTMLFormElement> = (e: SyntheticEvent) => {
+        e.preventDefault();
+
+        const target = e.target as typeof e.target & {
+            username: { value: string },
+            password: { value: string }
+        };
+
+        const data: AuthType = {
+            username: target.username.value,
+            password: target.password.value
+        };
+
+        mutation.mutate(data)
+    }
+
+    useEffect(() => {
+        if (mutation.isSuccess) {
+            dispatch(toggleAuth(mutation.data.data.token))
+        }
+    }, [dispatch, mutation])
+
+
+
+
+
+
+    return (
+        <section className="formContainer">
+            <div className="formCard">
+                <div className="formCardHeader">
+                    <h1 className="title textCenter titleMargin textCenter"  >Connectez-vous</h1>
+                    {(!mutation.isError && !mutation.isSuccess) && <p className="textComment textSecondary ">Have any questions or suggestions Drop us a message.</p>}
+                    {(mutation.isError) && (<p className="textComment textDanger">{mutation.error?.message}</p>)}
+                    {(mutation.isSuccess) && (<p className="textComment textSuccess">{mutation.data?.message}</p>)}
+                </div>
+
+                {
+                    mutation.isLoading ? (
+                        <p className="textComment textSuccess textCenter">Loading ...</p>
+                    ) : (
+                        <form className="formCardBody" onSubmit={__handleOnClick} >
+                            <FormInput name='username' type="text" label="Nom d'utilisateur" placeholder="Entrez votre nom d'utilisateur " value={username} setValue={setUsername} />
+                            <FormInput name='password' type="password" label='Mot de passe' placeholder='Entre votre mot de passe' value={password} setValue={setPassword} />
+                            <FormButton value={"valider"} />
+                        </form>
+                    )
+                }
+            </div>
+        </section>
+    );
 };
+
 
 export default Login;

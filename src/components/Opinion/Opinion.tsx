@@ -1,8 +1,6 @@
 import React from 'react'
+
 import { HeaderStar } from "../Header/Header"
-
-
-import { BiStar } from "react-icons/bi";
 import "./Opinion.scss"
 
 
@@ -15,7 +13,7 @@ export const Opinion = ({ src, title, score = 0 }: { src: string, title: string,
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dolore ipsa eius obcaecati harum iure sed unde, ab fuga quo natus? Officiis blanditiis fuga consectetur voluptatem tempora perspiciatis, accusamus architecto.
                 </p>
             </div>
-            <p className="commentFooter text textComment">Cet avis, vous a ete utile? <span className="commentFooterValue">Oui</span> <span className="commentFooterValue">Non</span></p>
+            <p className="commentFooter text textComment">Cet avis vous a été utile? <span className="commentFooterValue">Oui</span> <span className="commentFooterValue">Non</span></p>
         </div>
     )
 }

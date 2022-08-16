@@ -7,7 +7,13 @@ import SideBar from './components/SideBar/SideBar';
 import { Provider } from "react-redux";
 import { store } from "./store/store"
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
 
+// Create a client
+const queryClient = new QueryClient()
 
 function App() {
 
@@ -18,16 +24,18 @@ function App() {
   }
 
   return (
-    <Provider store={store}>
-      <div className="App">
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <div className="App">
 
           <SideBar isOpen={sideBarIsOpen} toggle={toggleSideBar} />
           <NavBar toggle={toggleSideBar} />
 
-        <Router />
-        <Footer />
-      </div>
-    </Provider>
+          <Router />
+          <Footer />
+        </div>
+      </Provider>
+    </QueryClientProvider>
   );
 }
 

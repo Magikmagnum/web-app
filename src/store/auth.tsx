@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const initialState: { state: boolean } = {
-    state: localStorage.getItem('user') === "true" ? true : false,
+const initialState: { state: string | null | boolean } = {
+    state: localStorage.getItem('user') !== "false" ? localStorage.getItem('user') : false,
 }
 
 export const authSlice = createSlice({
@@ -23,6 +23,6 @@ export const { toggleAuth } = authSlice.actions;
 
 export type InitialState = {
     auth: {
-        state: boolean
+        state: string | null | boolean
     }
 }

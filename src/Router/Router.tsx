@@ -18,7 +18,7 @@ import SkillClient from '../pages/SkillClient/SkillClient';
 const Router = () => {
 
   const user = useSelector((state: InitialState) => state.auth.state)
-
+  console.log('coucou',user);
   return (
     <Routes>
 

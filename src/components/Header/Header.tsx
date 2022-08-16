@@ -89,10 +89,32 @@ export const HeaderMedium = (
 }
 
 
+
+export const HeaderMini = (
+    {
+        srcImg,
+        title,
+        subtitle,
+        description,
+        styleContent
+    }:
+        {
+            srcImg?: string,
+            title?: string,
+            subtitle?: string,
+            description?: string,
+            styleContent?: string
+        }) => {
+
+    return (
+        <Header srcImg={srcImg} title={title} subtitle={subtitle} description={description} styleContent={styleContent} styleImage={__AvaterSquareMinClass} styleTitle={__TitleLitle} />
+    )
+}
+
+
+
+
 export const HeaderStar = ({ srcImg, title, score = 0 }: { srcImg?: string, title?: string, score?: number }) => {
-
-
-
     const Star = useCallback(
         () => {
 
