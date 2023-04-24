@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+
 import { useSelector } from 'react-redux';
-import { InitialState } from "../../store/auth";
+import { StoreType } from "../../store/store";
 
 import { NavLink } from 'react-router-dom';
 import './SideBar.scss';
@@ -14,8 +15,9 @@ import logo from '../../images/icon.png'
 
 const SideBar = ({ isOpen, toggle }: { isOpen: boolean, toggle: Function }) => {
 
+  const is_auth = useSelector((state: StoreType) => state?.auth?.state)
+  const is_register = useSelector((state: StoreType) => state?.register?.state)
 
-  const user = useSelector((state: InitialState) => state.auth.state)
   const [sideBarContainerToggel, setSideBarContainerToggel] = useState({
     opacity: 0,
     top: 100
@@ -43,37 +45,35 @@ const SideBar = ({ isOpen, toggle }: { isOpen: boolean, toggle: Function }) => {
   }, [isOpen]);
 
   return (
-    <nav className="sideBarContainer" style={sideBarContainerToggel}>
-      <div className="icon">
-        <BiChevronUp className="closeIcon" onClick={() => toggle()} />
-      </div>
-      <div className="sideBarWrapper">
-
-        <div className="sideBarMenu">
-          <img src={logo} className="navBarLogo" alt='logo' />
-          {!user &&
-            <>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/">Home</NavLink>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/register">Register</NavLink>
-            </>
-          }
-
-          {user &&
-            <>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/Catalog">Catalog</NavLink>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/Desks">Desk</NavLink>
-              <NavLink className="sideBarLink" onClick={() => toggle()} to="/Settings">Settings</NavLink>
-            </>
-          }
+    <>
+      <nav className="sideBarContainer" style={sideBarContainerToggel}>
+        <div className="icon">
+          <BiChevronUp className="closeIcon" onClick={() => toggle()} />
         </div>
-        <div className="sideBtnWrapper">
-          {user ?
-            <NavLink className="navBtnLink" onClick={() => toggle()} to="/logout">Logout</NavLink> :
-            <NavLink className="navBtnLink" onClick={() => toggle()} to="/login">Sign In</NavLink>
-          }
+        <div className="sideBarWrapper">
+
+          <div className="sideBarMenu">
+            <img src={logo} className="navBarLogo" alt='logo' />
+            {(is_auth && is_register) &&
+              <>
+                <NavLink className="sideBarLink" onClick={() => toggle()} to="/Catalog">Catalog</NavLink>
+                <NavLink className="sideBarLink" onClick={() => toggle()} to="/Desks">Desk</NavLink>
+                <NavLink className="sideBarLink" onClick={() => toggle()} to="/Settings">Settings</NavLink>
+              </>
+            }
+          </div>
+          <div className="sideBtnWrapper">
+            {is_auth ?
+              <NavLink className="navBtnLink" onClick={() => toggle()} to="/logout">Logout</NavLink> :
+              <>
+                <NavLink className="navBtnLink" onClick={() => toggle()} to="/login">Sign In</NavLink>
+                <NavLink className="navBtnLink" onClick={() => toggle()} to="/register">Sign up</NavLink>
+              </>
+            }
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 

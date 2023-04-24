@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './Card.scss';
-import { Header } from "../../components/Header/Header"
+import { Header } from "../Header/Header"
 
 import { BiRocket } from "react-icons/bi";
 import { BiBookBookmark } from "react-icons/bi";
@@ -73,19 +73,21 @@ export const CardSquare = (
         title,
         note,
         contrat,
+        id
     }:
         {
             children: string,
             className?: string,
             src?: string,
-            callback?: Function,
+            callback: Function,
             title?: string,
             note?: number,
             contrat?: number,
+            id?: number,
 
         }) => {
     return (
-        <div className={"item " + className} onClick={() => callback && alert('coucou')}>
+        <div className={"item " + className} onClick={() => callback(id)}>
             <div className="cardHeader">
                 <img src={src} className="" alt="card" />
             </div>

@@ -10,6 +10,7 @@ const __AvaterSquareMinClass = "avatar avatarSqareMin";
 const __TitleClass = "title titleCard";
 const __TitleLitle = "title titleComment";
 
+
 export const Header = (
     {
         srcImg,
@@ -66,6 +67,12 @@ export const Header = (
         </div>
     )
 }
+
+
+
+
+
+
 
 export const HeaderMedium = (
     {
@@ -124,7 +131,7 @@ export const HeaderStar = ({ srcImg, title, score = 0 }: { srcImg?: string, titl
             for (let index = 1; index <= 5; index++) {
                 i--;
                 if (i >= 0) {
-                    result.push(<BiStar color='#ff9800' />)
+                    result.push(<BiStar color='#eab413' />)
                 } else {
                     result.push(<BiStar color='#dbdbdb' />)
                 }

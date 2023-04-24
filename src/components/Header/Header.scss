@@ -16,13 +16,23 @@
 
 
         .headerCmpSubTitle {
-            color: green;
+            color: #00a3b4;
             font-weight: bold;
         }
     }
 }
 
+.headerCmpCenter {
+    max-height: max-content;
+    flex:3;
+    align-items: center;
+}
 
+.headerTitle {
+    font-size: 1.6em;
+    color: #000;
+    font-weight: 600;
+}
 
 
 
@@ -52,6 +62,12 @@ img {
     height: 60px;
 }
 
+.avatarSqareMax {
+    width: auto;
+    height: 14em;
+}
+
+
 .avatarSqareMin {
 
     height: 48px;
@@ -70,8 +86,3 @@ img {
     font-size: 14px;
     color: #666;
 }
-
-
-
-
-

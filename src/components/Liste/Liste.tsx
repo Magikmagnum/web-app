@@ -1,9 +1,9 @@
 import React from 'react';
-import './Liste.scss';
+import './List.scss';
 
 
 
-export const Liste = ({ title = null, items = [] }: { title?: string | null, items?: any[] }) => {
+export const List = ({ title = null, items = [] }: { title?: string | null, items?: any[] }) => {
 
     return (
         <section className="boardContainer">

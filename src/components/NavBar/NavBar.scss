@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
 
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -44,6 +45,7 @@
     margin-left: 24px;
     font-weight: bold;
     text-decoration: none;
+    margin-left: -2px;
 }
 
 
@@ -102,12 +104,13 @@
     cursor: pointer;
 
     &.active {
-        border-bottom: 4px solid #009007;
+        border-bottom: 4px solid #00a3b4;
     }
 }
 
 .navBtn {
     display: flex;
+    gap: 12px;
     align-items: center;
 
     @media screen and (max-width: 768px) {
@@ -121,7 +124,7 @@
 
     border-radius: 50px;
     white-space: nowrap;
-    background-color: #000;
+    background-color: #eab413;
     padding: 10px 22px;
     color: #fff;
     cursor: pointer;
@@ -141,6 +144,15 @@
     &:hover {
         transition: all 0.2s ease-in-out;
         background-color: #fff;
-        color: #009006;
+        color: #00a3b4;
+    }
+}
+
+
+.nav {
+    .MuiBox-root.css-1nylpq2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

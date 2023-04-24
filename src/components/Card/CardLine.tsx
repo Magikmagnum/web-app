@@ -2,10 +2,8 @@ import React, { useState, useMemo, useCallback } from 'react'
 
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { DashCounter } from '../../components/Dash/DashCounter';
-import { HeaderMedium, HeaderMini } from '../../components/Header/Header';
+import { HeaderMedium, HeaderMini } from '../Header/Header';
 
-
-import data from "../../helpers/competences";
 import './CardLine.scss';
 
 
@@ -15,10 +13,6 @@ export const CardLine = ({ src, title, subtitle }: { src?: string, title?: any, 
     const [isOpen, setIsOpen] = useState(false)
 
 
-    const user = useMemo(() => {
-        console.log('render')
-        return data[6]
-    }, [])
 
     const __handelClick = useCallback(() => {
         setIsOpen(e => !e)
@@ -32,13 +26,13 @@ export const CardLine = ({ src, title, subtitle }: { src?: string, title?: any, 
                 <HeaderMedium srcImg={src} title={title} />
             </div>
             <div className="cardLineBody">
-                <DashCounter datasets={{
+                {/* <DashCounter datasets={{
                     note: user.note,
                     contrat: user.contrat,
                     realisation: user.realisation,
                     aime: user.aime,
                 }}
-                />
+                /> */}
             </div>
 
             <div className="cardLineSet" onClick={__handelClick}>

@@ -2,14 +2,6 @@ import * as React from 'react';
 import './Footer.scss';
 import { NavLink } from 'react-router-dom';
 
-import imgp1 from '../../images/partenaire/1KUBATOR.jpg'
-import imgp2 from '../../images/partenaire/voisins.jpeg'
-import imgp3 from '../../images/partenaire/GIP-PNG24.png'
-
-import imgp4 from '../../images/partenaire/bge.png'
-import imgp5 from '../../images/partenaire/lafabrique.png'
-import imgp6 from '../../images/partenaire/Logo_LMH_quadri.svg'
-import imgp7 from '../../images/partenaire/logo-visale.svg'
 
 
 
@@ -50,11 +42,11 @@ const Footer: React.FunctionComponent<IFooterProps> = (props) => {
         <h3>Nos partenair</h3>
 
         <div className="footerCardContainer">
-          <FooterCard img={imgp1} />
+          {/* <FooterCard img={imgp1} />
           <FooterCard img={imgp2} />
           <FooterCard img={imgp4} />
           <FooterCard img={imgp5} />
-          <FooterCard img={imgp7} />
+          <FooterCard img={imgp7} /> */}
         </div>
 
       </div>

@@ -1,48 +1,18 @@
 import React from 'react';
-import { Navigate, Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { InitialState } from "../store/auth";
+import { Routes, Route } from 'react-router-dom';
 
-import Login from '../pages/Login/Login';
-import Home from '../pages/Home/Home';
-import Register from '../pages/Register/Register';
-import Catalog from '../pages/Catalog/Catalog';
-import Desks from '../pages/Desks/Desks';
-import View from '../pages/Desks/View';
-import Logout from '../pages/Logout/Logout';
-import Settings from '../pages/Settings/Settings';
-import SkillClient from '../pages/SkillClient/SkillClient';
-
-
+import Analyse from '../pages/Analyse/Analyse';
 
 const Router = () => {
 
-  const user = useSelector((state: InitialState) => state.auth.state)
-  console.log('coucou',user);
-  return (
-    <Routes>
 
-      {!user && (
-        <>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-        </>
-      )}
-      {user && (
-        <>
-          <Route path='/Desks' element={<Desks />} />
-          <Route path='/View' element={<View />} />
-          <Route path='/Catalog' element={<Catalog />} />
-          <Route path='/Catalog' element={<Catalog />} />
-          <Route path='/Settings' element={<Settings />} />
-          <Route path='/SkillClient' element={<SkillClient />} />
-          <Route path='/logout' element={<Logout />} />
-        </>
-      )}
-      <Route path='*' element={<Navigate to={user ? "/Catalog" : "/login"} />} />
-    </Routes>
-  );
+    return (
+        <Routes>
+            <Route path='/' element={<Analyse />} />
+        </Routes>
+    );
 };
 
 export default Router;
+
+

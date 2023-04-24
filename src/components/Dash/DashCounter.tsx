@@ -9,10 +9,10 @@ import { BiStar } from "react-icons/bi";
 import { BiHeart } from "react-icons/bi";
 
 
-export const DashItem = ({ children, title, score = 0 }: { children: any, score?: number, title: string }) => {
+export const DashItem = ({ children = null, title, score = 0 }: { children?: any, score?: number, title: string }) => {
     return (
         <div className="dashItem">
-            {children}
+            {children !== null && children}
             <div className="score">{score}</div>
             <div className="tile">{title}</div>
         </div>
@@ -20,19 +20,20 @@ export const DashItem = ({ children, title, score = 0 }: { children: any, score?
 };
 
 type User = {
-    note: number,
-    contrat: number,
-    realisation: number,
-    aime: number,
+    proteine: number,
+    glucide: number,
+    lipide: number,
+    fibre: number,
+    eau: number,
 }
 export const DashCounter = ({ datasets }: { datasets: User }) => {
     return (
-        <section className="dash" style={{}}>
-            <DashItem title="note" score={datasets.note}><BiStar /> </DashItem>
-            <DashItem title="contrat" score={datasets.contrat}><BiBookBookmark /> </DashItem>
-            <DashItem title="réalisation" score={datasets.realisation}> <BiRocket /></DashItem>
-            <DashItem title="aime" score={datasets.aime}> <BiHeart /></DashItem>
+        <section className="dash" >
+            <DashItem title="Proteine" score={datasets.proteine}> </DashItem>
+            <DashItem title="Glucide" score={datasets.glucide}></DashItem>
+            <DashItem title="Lipide" score={datasets.lipide}></DashItem>
+            <DashItem title="Fibre" score={datasets.fibre}></DashItem>
+            <DashItem title="eau" score={datasets.eau}></DashItem>
         </section>
-        //<DashItem title="commentaire" score={datasets.comment}> <BiCommentDetail /></DashItem>
     )
 };
