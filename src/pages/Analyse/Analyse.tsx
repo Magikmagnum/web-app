@@ -6,20 +6,10 @@ import {
     InputLabel,
     MenuItem,
     Select,
-    TextField,
     Button,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
-    TableRow,
-    Paper,
-    Avatar,
 } from '@mui/material/';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
-import Stack from '@mui/material/Stack';
 import { SelectChangeEvent } from '@mui/material/';
 import axios from 'axios'
 
@@ -28,16 +18,12 @@ import { activityList } from "../../helpers/activity_list";
 import { ageList } from "../../helpers/age_list";
 import { morphplogieList } from "../../helpers/morphplogie_list";
 import { steriliseList } from "../../helpers/sterilise_list";
-
-import { Opinion, Bar } from '../../components/Opinion/Opinion';
-
-
-import { HeaderMedium, HeaderMini, Header } from '../../components/Header/Header';
-import { DashCounter } from '../../components/Dash/DashCounter';
-
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import { Radar } from 'react-chartjs-2';
+import { Bar } from '../../components/Opinion/Opinion';
+import { Header } from '../../components/Header/Header';
+
+
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -81,15 +67,7 @@ export const data = {
 
 const besoin_energetique = 400;
 
-const options = {
-    responsive: true,
-    plugins: {
-        legend: false
-    },
-    scales: {
 
-    }
-}
 
 
 // Définition de l'interface des valeurs du formulaire
@@ -569,20 +547,3 @@ const Form: React.FC = () => {
 };
 
 export default Form;
-
-
-
-const StatBox = ({ children, score = 0, title, unity = "", style = {} }: { children: any, score?: number, title: string, unity?: string, style?: any }) => {
-    return (
-        <div className='statBox' >
-            <div className="statTitle">{title}</div>
-            <div className="statGraph" style={style}>
-                {children}
-            </div>
-            <div className="statScore">
-                <div className="statValue">{score}</div>
-                <div className="statScoreUnits">{unity}</div>
-            </div>
-        </div>
-    )
-}
