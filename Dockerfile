@@ -7,6 +7,8 @@ WORKDIR /app
 # Copiez les fichiers package.json et package-lock.json dans le répertoire de travail
 COPY package*.json ./
 
+RUN npm install --save react react-dom react-scripts
+
 # Installez les dépendances du projet
 RUN npm install
 
