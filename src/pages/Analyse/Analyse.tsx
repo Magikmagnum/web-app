@@ -94,14 +94,14 @@ interface CroquetteTypes {
     key: number;
 }
 
-interface AnalyseDataRequestTypes {
-    animal: string;
-    race: string;
-    stade: string;
-    activite: string;
-    morphologie: string;
-    sterilite: boolean;
-}
+// interface AnalyseDataRequestTypes {
+//     animal: string;
+//     race: string;
+//     stade: string;
+//     activite: string;
+//     morphologie: string;
+//     sterilite: boolean;
+// }
 
 interface AnalyseDataResponseTypes {
     status: number;
@@ -152,32 +152,32 @@ const Form: React.FC = () => {
 
 
 
-    const [useDataDo, setUserDataDo] = useState({
-        labels: 2023,
-        datasets: [{
-            label: "User gain",
-            data: [12, 19, 3,],
-            fill: true, // permet de faire apparaitre le backgroundColor 
-            //backgroundColor: '#0090071f',
-            backgroundColor: [
-                '#009007cf',
-                '#000',
-                '#aaa',
-                '#ff9800ba'
-            ],
-            borderColor: '#009007',
-            pointBorderColor: '#000',
-            pointBorderWidth: 0,
-            //tension: 1,
-            borderRadius: 100,
-            spacing: 14,
-            cutout: '88%',
-            hoverBackgroundColor: '#000',
-            hoverBorderColor: '#000',
-            borderWidth: 0,
+    // const [useDataDo, setUserDataDo] = useState({
+    //     labels: 2023,
+    //     datasets: [{
+    //         label: "User gain",
+    //         data: [12, 19, 3,],
+    //         fill: true, // permet de faire apparaitre le backgroundColor 
+    //         //backgroundColor: '#0090071f',
+    //         backgroundColor: [
+    //             '#009007cf',
+    //             '#000',
+    //             '#aaa',
+    //             '#ff9800ba'
+    //         ],
+    //         borderColor: '#009007',
+    //         pointBorderColor: '#000',
+    //         pointBorderWidth: 0,
+    //         //tension: 1,
+    //         borderRadius: 100,
+    //         spacing: 14,
+    //         cutout: '88%',
+    //         hoverBackgroundColor: '#000',
+    //         hoverBorderColor: '#000',
+    //         borderWidth: 0,
 
-        }]
-    });
+    //     }]
+    // });
 
 
 
