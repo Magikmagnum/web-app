@@ -1,25 +1,25 @@
-version: "3.9"
+# version: "3.9"
 
-services:
-        react-app:
-                build:
-                        context: .
-                        dockerfile: Dockerfile
-                ports:
-                        - "3000:3000"
-                volumes:
-                        - .:/app
-                        - /app/node_modules
-                environment:
-                        - NODE_ENV=development
-                command: npm start
+# services:
+#         react-app:
+#                 build:
+#                         context: .
+#                         dockerfile: Dockerfile
+#                 ports:
+#                         - "3000:3000"
+#                 volumes:
+#                         - .:/app
+#                         - /app/node_modules
+#                 environment:
+#                         - NODE_ENV=development
+#                 command: npm start
 
-        nginx:
-                image: nginx:latest
-                ports:
-                        - "8888:80"
-                volumes:
-                        # - ./nginx.conf:/etc/nginx/nginx.conf
-                        - ./build:/usr/share/nginx/html
-                depends_on:
-                        - react-app
+#         nginx:
+#                 image: nginx:latest
+#                 ports:
+#                         - "8888:80"
+#                 volumes:
+#                         # - ./nginx.conf:/etc/nginx/nginx.conf
+#                         - ./build:/usr/share/nginx/html
+#                 depends_on:
+#                         - react-app

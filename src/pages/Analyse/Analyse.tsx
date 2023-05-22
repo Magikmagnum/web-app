@@ -184,7 +184,7 @@ const Form: React.FC = () => {
     // Recuperer la list des marques depuis le serveur
     async function getBrandList() {
         try {
-            const response = await axios.get('http://13.36.175.74:8080/api/v1/brand');
+            const response = await axios.get('http://localhost:8742/api/v1/brand');
 
 
             const brandsSelect: BrandTypes[] = [];
@@ -209,7 +209,7 @@ const Form: React.FC = () => {
     // Recuperer la list des marques depuis le serveur
     async function getCroquetteList(brand: string) {
         try {
-            const response = await axios.get('http://13.36.175.74:8080/api/v1/croquette_by_brand/' + brand);
+            const response = await axios.get('http://localhost:8742/api/v1/croquette_by_brand/' + brand);
 
 
             const croquettesSelect: CroquetteTypes[] = [];
@@ -242,7 +242,7 @@ const Form: React.FC = () => {
 
             const { croquette, marque, ...parametre } = data;
 
-            axios.post("http://13.36.175.74:8080/api/v1/analyse/" + croquette, {
+            axios.post("http://localhost:8742/api/v1/analyse/" + croquette, {
                 race: parametre.race,
                 stade: parametre.stade,
                 activite: parametre.activite,
@@ -513,18 +513,7 @@ const Form: React.FC = () => {
                                     Les calories dont votre chat a besion
                                 </div>
                                 <text className='scrore'> {(response as AnalyseDataResponseTypes).data.energie_metabolisable} / {besoin_energetique} </text><text>*</text>
-                                <div >
-                                    -
-                                    <text className="mb-3">Le besoin energetique de votre chat : </text>
-                                    <text className='red txt-bold'> {besoin_energetique} </text>
-                                    <text className='subTitle'>kcal/g</text>
-                                </div>
-                                <div className="mb-3">
-                                    -
-                                    <text className="">L'apport energetique des croquettes: </text>
-                                    <text className='green txt-bold'> {(response as AnalyseDataResponseTypes).data.energie_metabolisable}  </text>
-                                    <text className='subTitle'>kcal/g</text>
-                                </div>
+
                                 <Alert severity="warning">
                                     <AlertTitle>A savoir</AlertTitle>
                                     {(response as AnalyseDataResponseTypes).data.commentaire}
@@ -532,7 +521,7 @@ const Form: React.FC = () => {
                             </div>
                         </section>
                         <section className="profil" >
-                            <p className='description'>* Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</p>
+                            <p className='description'>* Le besoin énergétique de votre chat est de <text className='red txt-bold'> {besoin_energetique} </text><text className='subTitle'>kcal/g</text>, tandis que l'apport énergétique des croquettes est de <text className='green txt-bold'> {(response as AnalyseDataResponseTypes).data.energie_metabolisable}  </text><text className='subTitle'>kcal/g</text>.</p>
                         </section>
                     </>
                 ) : (
