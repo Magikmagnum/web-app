@@ -184,7 +184,7 @@ const Form: React.FC = () => {
     // Recuperer la list des marques depuis le serveur
     async function getBrandList() {
         try {
-            const response = await axios.get('http://localhost:8742/api/v1/brand');
+            const response = await axios.get('http://15.188.23.24:8742/api/v1/brand');
 
 
             const brandsSelect: BrandTypes[] = [];
@@ -209,7 +209,7 @@ const Form: React.FC = () => {
     // Recuperer la list des marques depuis le serveur
     async function getCroquetteList(brand: string) {
         try {
-            const response = await axios.get('http://localhost:8742/api/v1/croquette_by_brand/' + brand);
+            const response = await axios.get('http://15.188.23.24:8742/api/v1/croquette_by_brand/' + brand);
 
 
             const croquettesSelect: CroquetteTypes[] = [];
@@ -242,7 +242,7 @@ const Form: React.FC = () => {
 
             const { croquette, marque, ...parametre } = data;
 
-            axios.post("http://localhost:8742/api/v1/analyse/" + croquette, {
+            axios.post("http://15.188.23.24:8742/api/v1/analyse/" + croquette, {
                 race: parametre.race,
                 stade: parametre.stade,
                 activite: parametre.activite,
